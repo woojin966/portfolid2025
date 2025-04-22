@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f0f0f0;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh; /* 뷰포트 높이의 100% */
+  background: #f7f3eb;
+  background: #f7f3eb;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-text {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #8fa78d; /* 그린 색상 */
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  position: relative;
+  display: flex; align-items: center;
+}
+
+.animated-text span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+  <section class="hero">
+    <h1 class="animated-text">Selected Projects</h1>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/SplitText.min.js"></script>
+
+      <script>
+       document.addEventListener('DOMContentLoaded', () => {
+  const textEl = document.querySelector('.animated-text');
+  const text = textEl.textContent;
+  textEl.textContent = '';  // 기존 텍스트 제거
+
+  const spans = [];
+
+  // 문자 하나씩 span으로 감싸기
+  for (let i = 0; i < text.length; i++) {
+    const span = document.createElement('span');
+    span.textContent = text[i];
+    textEl.appendChild(span);
+
+    // 초기 위치 기억용
+    spans.push({
+      el: span,
+      baseX: 0,
+      baseY: 0,
+      offsetFactor: Math.random() * 3 + 1.5 // 민감도 랜덤
+    });
+  }
+
+  const spanEls = spans.map(s => s.el);
+
+  // 1. 등장 애니메이션
+  gsap.fromTo(
+    spanEls,
+    { opacity: 0, y: 50 },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 1.5,
+      ease: "power3.out",
+    }
+  );
+
+  // 2. 흩어지는 애니메이션
+  gsap.to(spanEls, {
+    delay: 3,
+    duration: 2,
+    ease: "power3.out",
+    stagger: 0.1,
+    y: () => gsap.utils.random(window.innerHeight * 0.3, window.innerHeight * 0.5),
+    x: () => gsap.utils.random(-200, 200),
+  });
+
+  // 3. 마우스 움직임 반응
+  let prevX = window.innerWidth / 2;
+  let prevY = window.innerHeight / 2;
+
+  document.addEventListener('mousemove', (e) => {
+  const hero = document.querySelector('.hero');
+  const heroRect = hero.getBoundingClientRect();
+
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+
+  const deltaX = e.clientX - centerX;
+  const deltaY = e.clientY - centerY;
+
+  spans.forEach(({ el, offsetFactor }) => {
+    const moveX = deltaX / offsetFactor * 1.5;
+    const moveY = deltaY / offsetFactor * 1.5;
+
+    const currentRect = el.getBoundingClientRect();
+
+    const targetX = currentRect.left + moveX;
+    const targetY = currentRect.top + moveY;
+
+    // .hero 영역 안인지 검사
+    const withinX = targetX >= heroRect.left && targetX + currentRect.width <= heroRect.right;
+    const withinY = targetY >= heroRect.top && targetY + currentRect.height <= heroRect.bottom;
+
+    if (withinX && withinY) {
+      gsap.to(el, {
+        x: `+=${moveX}`,
+        y: `+=${moveY}`,
+        duration: 0.5,
+        ease: "power1.out"
+      });
+    }
+  });
+});
+});
+      </script>
+</body>
+</html>
