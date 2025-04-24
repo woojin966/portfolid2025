@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .header{position: fixed; top: 0; left: 0; width: 100%; height: 60px;}
+        section{padding: 0 calc((100% - 1280px) / 2);}
+
+        .top_section{display: flex; justify-content: center; align-items: flex-end;}
+        .hero {width: 60%; /*height: 400px;*/ overflow: hidden;}
+        .animated_text{font-size: 120px;flex-wrap: wrap;display: flex;align-items: center; gap: 0 20px; line-height: 1;}
+        .animated_text p{display: flex;}
+        .animated_text p:last-child{width: 100%;}
+        .top_img_box{width: 40%; height: 400px; background-color: aqua;}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="body_wrap">
+        <section class="header"></section>
+        <section class="top_section">
+            <div class="hero">
+                <h1 class="animated_text">
+                    <p>
+                        <span>I</span>
+                        <span>'</span>
+                        <span>M</span>
+                    </p>
+                    <p>
+                        <span>A</span>
+                    </p>
+                    <!-- <br/> -->
+                    <p>
+                        <span>W</span>
+                        <span>E</span>
+                        <span>B</span>
+                    </p>
+                    <!-- <br/> -->
+                    <p>
+                        <span>P</span>
+                        <span>U</span>
+                        <span>B</span>
+                        <span>L</span>
+                        <span>I</span>
+                        <span>S</span>
+                        <span>H</span>
+                        <span>E</span>
+                        <span>R</span>
+                    </p>
+                </h1>
+            </div>
+            <div class="top_img_box">
+                <img src="" />
+            </div>
+        </section>
+    </div>
+  <!-- <section class="hero">
+    <h1 class="animated_text">
+      <span>I</span>
+      <span>'</span>
+      <span>M</span>
+      <span>A</span>
+      <br/>
+      <span>W</span>
+      <span>E</span>
+      <span>B</span>
+      <br/>
+      <span>P</span>
+      <span>U</span>
+      <span>B</span>
+      <span>L</span>
+      <span>I</span>
+      <span>S</span>
+      <span>H</span>
+      <span>E</span>
+      <span>R</span>
+    </h1>
+  </section> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/SplitText.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const animatedText = document.querySelector('.animated_text');
+    const spans = animatedText.querySelectorAll('span');
+    const hero = document.querySelector('.hero');
+
+    // 초기 위치 세팅
+    gsap.set(spans, { opacity: 0, y: 0 });
+
+    // 등장 애니메이션
+    gsap.to(spans, {
+        delay: 0.5,
+        duration: 1.5,
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        ease: "power3.out",
+    });
+
+    // 떨어지는 애니메이션은 3초 후 실행
+    setTimeout(() => {
+        // window 기준이 아니라 문서 기준의 hero 위치를 계산
+        const heroRect = hero.getBoundingClientRect();
+        const heroBottom = heroRect.bottom + window.scrollY;
+        const heroHeight = heroRect.height;
+
+        // 반응형으로 떨어질 위치 설정 (.hero 아래로)
+        const minDropY = 0;
+        const maxDropY = heroBottom - heroHeight;
+
+        // 애니메이션 실행
+        spans.forEach(span => {
+    gsap.to(span, {
+        duration: 2.5,
+        y: gsap.utils.random(minDropY - span.offsetTop, maxDropY - span.offsetTop),
+        x: gsap.utils.random(0, 0),
+        opacity: 1, // ✨ 페이드아웃 막기 위해 명시적으로 유지
+        ease: "bounce.out",
+        overwrite: true,
+    });
+});
+    }, 3000);
+});
+
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const animatedText = document.querySelector('.animated_text');
+        //     const spans = animatedText.querySelectorAll('span');
+        //     const hero = document.querySelector('.hero'); // .hero 요소 선택
+
+        //     // .hero의 위치 정보 가져오기
+        //     const heroRect = hero.getBoundingClientRect();
+        //     const heroBottom = heroRect.bottom; // .hero 아래 부분의 y 위치
+        //     const heroHeight = heroRect.height;
+
+        //     // 글자들 초기 위치 설정 (y: 0)
+        //     gsap.set(spans, { opacity: 0, y: 0 });
+
+        //     // 1. 등장 애니메이션: 글자들이 나타나며 올라오는 애니메이션
+        //     gsap.to(spans, {
+        //         delay: 0.5,
+        //         duration: 1.5,
+        //         opacity: 1,
+        //         y: 0,
+        //         stagger: 0.1,
+        //         ease: "power3.out",
+        //     });
+
+        //     // 2. 글자들이 .hero 아래로 떨어지도록 애니메이션 설정
+        //     gsap.to(spans, {
+        //         delay: 3, // 등장 후 3초 뒤
+        //         duration: 3,
+        //         y: () => gsap.utils.random(0, heroHeight - 220), // .hero 아래로 떨어지게 설정
+        //         x: () => gsap.utils.random(0, 40), // x축 랜덤 움직임
+        //         stagger: 0.1, // 글자들 사이에 작은 시간 차이
+        //         ease: "bounce.out", // 바운스 효과로 떨어지기
+        //     });
+        // });
+      </script>
+    </body>
+</html>
