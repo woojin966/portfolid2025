@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 기본 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #333;
+  color: #fff;
+}
+
+.header .logo a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li a {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Main Section */
+.main-content {
+  padding: 40px;
+}
+
+.intro h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Portfolio Section */
+.portfolio {
+  margin-top: 40px;
+}
+
+.portfolio h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.portfolio-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.portfolio-item p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Header Section -->
+  <header class="header">
+    <div class="logo">
+      <a href="#">로고</a>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">홈</a></li>
+        <li><a href="#">포트폴리오</a></li>
+        <li><a href="#">블로그</a></li>
+        <li><a href="#">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main class="main-content">
+    <section class="intro">
+      <h1>안녕하세요, 저는 퍼블리셔입니다.</h1>
+      <p>웹사이트 디자인과 개발을 맡고 있습니다. 다양한 프로젝트를 통해 경험을 쌓아가고 있습니다.</p>
+    </section>
+
+    <section class="portfolio">
+      <h2>포트폴리오</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/300" alt="Project 1">
+          <p>프로젝트 1</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/300" alt="Project 2">
+          <p>프로젝트 2</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/300" alt="Project 3">
+          <p>프로젝트 3</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2025 퍼블리셔 포트폴리오. All rights reserved.</p>
+  </footer>
+</body>
+</html>

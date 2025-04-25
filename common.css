@@ -1,0 +1,17 @@
+h1{font-size: 200px;}
+        h2{font-size: 168px;}
+        h3{font-size: 88px;}
+        .big{font-size: 40px;}
+        .medium{font-size: 24px;}
+        .text{font-size: 20px;}
+        .small{font-size: 16px;}
+        .mini{font-size: 14px;}
+        .bb{font-weight: 900;}
+        .b{font-weight: 700;}
+        .sb{font-weight: 600;}
+        .mb{font-weight: 500;}
+        .n{font-weight: 400;}
+
+        .header{padding: 20px calc((100% - 1280px) / 2); width: 100%;}
+        section.black{background-color: #000;}
+        section.black h1, section.black h2, section.black h3, section.black p{color: #fff;}
