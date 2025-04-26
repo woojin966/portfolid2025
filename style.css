@@ -1,34 +1,61 @@
 section.top_section{padding: 140px calc((100% - 1280px) / 2) 24px; display: flex; justify-content: center; align-items: flex-end;}
-        .hero {width: 60%; /*height: 400px;*/ overflow: hidden;}
-        .animated_text{flex-wrap: wrap;display: flex;align-items: center; gap: 0 20px; line-height: 1;}
-        .animated_text p{display: flex;}
-        .animated_text p:last-child{width: 100%;}
-        .top_img_box{width: 40%; height: 400px; background-color: aqua;}
+.hero {display: flex; flex-direction: column; gap: 20px; width: 60%; /*height: 400px;*/ overflow: hidden;}
+.animated_text{flex-wrap: wrap;display: flex;align-items: center; gap: 0 20px; line-height: 1;}
+.animated_text p{display: flex; color: transparent !important;}
+.animated_text p span{background-image: url('bling.gif'); background-position: center;-webkit-background-clip: text;background-clip: text;}
+.animated_text p:last-child{width: 100%;}
+.top_img_box{width: 40%; height: 600px; text-align: right;}
+.top_img_box img{width: auto; height: 100%;}
 
-        section.name_section{padding: 40px 0; height: 460px;}
-        .name_img{width: 100%; height: 100%; background-color: yellow;}
+section.name_section{padding: 40px 0; height: max-content; text-align: center;}
+.name_img{width: 96%;}
 
-        section.job_section{display: flex; justify-content: space-between; padding: 120px calc((100% - 1280px) / 2);}
-        section.job_section article{width: 50%;}
-        section.job_section ul{display: flex; flex-wrap: wrap;}
-        section.job_section li{display: flex; flex-direction: column; gap: 40px;}
-        section.job_section li:first-child{padding: 0 60px 60px 0; width: 50%; border-right: 1px solid #fff;}
-        section.job_section li:nth-child(2){padding: 0 0 60px 60px ;width: 50%;}
-        section.job_section li:last-child{padding: 60px 0 0; width: 100%; border-top: 1px solid #fff;}
-        section.job_section li img{width: 40px; height: 40px; background-color: yellow;}
+section.job_section{display: flex; justify-content: space-between; gap: 40px; padding: 20px calc((100% - 1280px) / 2) 120px;}
+section.job_section article:last-child{width: 52%;}
+section.job_section ul{display: flex; flex-wrap: wrap;}
+section.job_section li{display: flex; flex-direction: column; gap: 28px; }
+section.job_section li:first-child{padding: 0 40px 40px 0; width: 50%; border-right: 1px solid #fff;}
+section.job_section li:nth-child(2){padding: 0 0 40px 40px ;width: 50%;}
+section.job_section li:last-child{padding: 40px 0 0; width: 100%; border-top: 1px solid #fff;}
+section.job_section li .icon{display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 4px; background: linear-gradient(168deg,rgba(255, 233, 38, 1) 0%, rgba(221, 255, 0, 1) 100%); }
+section.job_section li .icon i{color: #000;}
+section.job_section li > div{display: flex; flex-direction: column; gap: 12px;}
 
-        section.portfolio_section{display: flex; flex-direction: column; gap: 100px; padding: 80px calc((100% - 1280px) / 2);}
-        section.portfolio_section .flex_title{width: 64%; line-height: 1;}
-        section.portfolio_section .flex_title p{display: flex; justify-content: space-between; gap: 20px;}
-        section.portfolio_section article.bottom{display: flex; flex-direction: column; gap: 32px; overflow: hidden;}
-        .project_list{display: flex; gap: 20px; justify-content: flex-end; }
-        .project_list li{position: relative; z-index: 1; display: flex; flex-direction: column; gap: 20px; width: calc(33.3333% - 6px);}
-        .project_list .trigger_btn{position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; cursor: pointer;}
-        .thumbnail_box{width: 100%; height: 560px;}
-        .thumbnail{width: 100%; height: 100%; object-fit: cover; background-color: yellow;}
-        .description_box{display: flex; flex-direction: column; gap: 8px;}
-        .contribution_box{position: absolute; top: 0; left: 0; z-index: 1; display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: space-between; padding: 24px; background-color: rgba(0, 0, 0, .6); color: #fff; border: 2px solid yellow; opacity: 0; transition: .4s all ease-in-out;}
-        .contribution_box.on{opacity: 1;}
-        .contribution_box h3{margin: 20px 0;}
-        .contribution_box .use_skills{display: flex; gap: 12px;}
-        .use_skills img{width: 40px; height: 40px; background-color: yellow;}
+section.portfolio_section{display: flex; flex-direction: column; gap: 60px; padding: 100px calc((100% - 1280px) / 2);}
+section.portfolio_section .flex_title p{display: flex; justify-content: space-between; gap: 20px; width: 72%;}
+section.portfolio_section article.bottom{display: flex; flex-direction: column; gap: 32px; overflow: hidden;}
+.project_list{display: flex; gap: 20px; justify-content: flex-end; }
+.project_list li{position: relative; z-index: 1; display: flex; flex-direction: column; gap: 20px; width: calc(33.3333% - 6px);}
+.project_list .trigger_btn{position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; cursor: pointer;}
+.thumbnail_box{width: 100%; height: 560px;}
+.thumbnail{width: 100%; height: 100%; object-fit: cover; background-color: yellow; border: 1px solid #000;}
+.thumbnail1{object-position: 80% bottom;}
+.thumbnail2{object-position: right top;}
+.description_box{display: flex; flex-direction: column; gap: 8px;}
+.description_box p.medium{color: yellow;}
+.contribution_box{position: absolute; top: 0; left: 0; z-index: 1; display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: space-between; padding: 24px; background-color: rgba(0, 0, 0, .6); color: #fff; border: 2px solid yellow; opacity: 0; transition: .4s all ease-in-out;}
+.contribution_box.on{opacity: 1;}
+.contribution_box h3{margin: 0 0 24px;}
+.contribution_box h3{color: yellow !important; }
+.contribution_box p{color: #fff !important;}
+.contribution_box .use_skills{display: flex; gap: 8px;}
+.use_skills span{display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 4px; /*background: linear-gradient(168deg,rgba(255, 233, 38, 1) 0%, rgba(221, 255, 0, 1) 100%); color: #000;*/ border: 2px solid yellow; object-fit: contain;}
+.use_skills img{object-fit: contain; width: 80%;}
+.use_skills i{color: yellow; font-size: 32px;}
+
+.skill_section{display: flex; flex-direction: column; gap: 60px; padding: 100px calc((100% - 1280px) / 2) 80px;}
+.skill_box{display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;}
+.skill{display: flex; gap: 8px; align-items: center; padding: 8px 16px; border-radius: 52px; background-color: #fff;}
+.skill_icon2{display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 28px; background: linear-gradient(168deg,rgba(255, 233, 38, 1) 0%, rgba(221, 255, 0, 1) 100%);}
+.skill_icon2 i{font-size: 24px;}
+.skill img{width: 80%; object-fit: contain;}
+
+.career_section{display: flex; flex-direction: column; gap: 60px; padding: 80px calc((100% - 1280px) / 2) 100px;}
+.career{display: flex; gap: 20px; flex-direction: column; padding: 28px 0; border-bottom: 1px solid #000;}
+.career:first-child{padding-top: 0;}
+.career h3{width: 80%;}
+
+.contact_section{display: flex; flex-direction: column; gap: 60px; padding: 80px calc((100% - 1280px) / 2);}
+
+section.name_section.bottom{padding: 0;}
+section.name_section.bottom img{object-position: center 60px;}

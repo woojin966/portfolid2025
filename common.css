@@ -1,17 +1,22 @@
 h1{font-size: 200px;}
-        h2{font-size: 168px;}
-        h3{font-size: 88px;}
-        .big{font-size: 40px;}
-        .medium{font-size: 24px;}
-        .text{font-size: 20px;}
-        .small{font-size: 16px;}
-        .mini{font-size: 14px;}
-        .bb{font-weight: 900;}
-        .b{font-weight: 700;}
-        .sb{font-weight: 600;}
-        .mb{font-weight: 500;}
-        .n{font-weight: 400;}
+h2{font-size: 168px;}
+h3{font-size: 88px;}
+.big{font-size: 40px;}
+.medium{font-size: 24px;}
+.text{font-size: 20px;}
+.small{font-size: 16px;}
+.mini{font-size: 14px;}
+.bb{font-weight: 900;}
+.b{font-weight: 700;}
+.sb{font-weight: 600;}
+.mb{font-weight: 500;}
+.n{font-weight: 400;}
 
-        .header{padding: 20px calc((100% - 1280px) / 2); width: 100%;}
-        section.black{background-color: #000;}
-        section.black h1, section.black h2, section.black h3, section.black p{color: #fff;}
+.body_wrap{background-color: #000; color: #fff;}
+.header{display: flex; gap: 20px; justify-content: center; padding: 20px calc((100% - 1280px) / 2); width: 100%; background-color: #fff; color: #000; text-align: center;}
+section.white{background-color: #fff;}
+.label{color: yellow;}
+section.white .label, section.grey .label{color: #000;}
+section.white h1, section.white h2, section.white h3, section.white p{color: #000;}
+.grey{background-color: #f1f1f1; color: #000;}
+.title{display: flex; flex-direction: column; gap: 20px;}

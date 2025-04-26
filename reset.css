@@ -17,6 +17,7 @@
         /* input type="number" 기본 화살표 없애기 */
         input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
         input:focus, input:focus-visible{outline: none;}
+        i{font-style: normal}
 
         /* Pretendard */
         @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
