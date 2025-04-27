@@ -5,7 +5,7 @@ section.top_section{padding: 140px calc((100% - 1280px) / 2) 24px; display: flex
 .animated_text p span{background-image: url('bling.gif'); background-position: center;-webkit-background-clip: text;background-clip: text;}
 .animated_text p:last-child{width: 100%;}
 .top_img_box{width: 40%; height: 600px; text-align: right;}
-.top_img_box img{width: auto; height: 100%;}
+.top_img_box img{width: 100%; height: 100%; object-fit: cover; object-position: center bottom;}
 
 section.name_section{padding: 40px 0; height: max-content; text-align: center;}
 .name_img{width: 96%;}
@@ -24,8 +24,8 @@ section.job_section li > div{display: flex; flex-direction: column; gap: 12px;}
 section.portfolio_section{display: flex; flex-direction: column; gap: 60px; padding: 100px calc((100% - 1280px) / 2);}
 section.portfolio_section .flex_title p{display: flex; justify-content: space-between; gap: 20px; width: 72%;}
 section.portfolio_section article.bottom{display: flex; flex-direction: column; gap: 32px; overflow: hidden;}
-.project_list{display: flex; gap: 20px; justify-content: flex-end; }
-.project_list li{position: relative; z-index: 1; display: flex; flex-direction: column; gap: 20px; width: calc(33.3333% - 6px);}
+.project_list{display: flex; gap: 20px; flex-wrap: wrap;}
+.project_list li{position: relative; z-index: 1; display: flex; flex-direction: column; gap: 20px; width: calc(33.3333% - 14px);}
 .project_list .trigger_btn{position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; cursor: pointer;}
 .thumbnail_box{width: 100%; height: 560px;}
 .thumbnail{width: 100%; height: 100%; object-fit: cover; background-color: yellow; border: 1px solid #000;}
@@ -33,10 +33,11 @@ section.portfolio_section article.bottom{display: flex; flex-direction: column; 
 .thumbnail2{object-position: right top;}
 .description_box{display: flex; flex-direction: column; gap: 8px;}
 .description_box p.medium{color: yellow;}
+.description_box p.big{letter-spacing: -1px;}
 .contribution_box{position: absolute; top: 0; left: 0; z-index: 1; display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: space-between; padding: 24px; background-color: rgba(0, 0, 0, .6); color: #fff; border: 2px solid yellow; opacity: 0; transition: .4s all ease-in-out;}
 .contribution_box.on{opacity: 1;}
-.contribution_box h3{margin: 0 0 24px;}
-.contribution_box h3{color: yellow !important; }
+.contribution_box h3{margin: 0 0 24px; color: yellow !important;}
+.contribution_box h3{ }
 .contribution_box p{color: #fff !important;}
 .contribution_box .use_skills{display: flex; gap: 8px;}
 .use_skills span{display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 4px; /*background: linear-gradient(168deg,rgba(255, 233, 38, 1) 0%, rgba(221, 255, 0, 1) 100%); color: #000;*/ border: 2px solid yellow; object-fit: contain;}
@@ -55,7 +56,110 @@ section.portfolio_section article.bottom{display: flex; flex-direction: column; 
 .career:first-child{padding-top: 0;}
 .career h3{width: 80%;}
 
-.contact_section{display: flex; flex-direction: column; gap: 60px; padding: 80px calc((100% - 1280px) / 2);}
+.contact_section{display: flex; flex-direction: column; gap: 60px; height: 694px; padding: 80px calc((100% - 1280px) / 2) 0; overflow: hidden;}
+article.name_section.bottom{position: absolute; bottom: -5px; left: 2%; width: 100%; padding: 0;}
+article.name_section.bottom img{ object-position: center 47px;}
+@media all and (max-width: 1440px){
+    .contact_section{height: 620px;}
+}
 
-section.name_section.bottom{padding: 0;}
-section.name_section.bottom img{object-position: center 60px;}
+@media all and (max-width: 1280px){
+    section.top_section{padding: 140px calc((100% - 1024px) / 2) 24px;}
+
+    section.job_section{padding: 24px calc((100% - 1024px) / 2) 120px;}
+
+    section.portfolio_section{padding: 100px calc((100% - 1024px) / 2);}
+    section.portfolio_section .flex_title p{width: 72%;}
+    .description_box p.big{font-size: 32px;}
+
+    .skill_section{padding: 100px calc((100% - 1024px) / 2) 80px;}
+
+    .career_section{padding: 80px calc((100% - 1024px) / 2) 100px;}
+
+    .contact_section{ display: flex; flex-direction: column; gap: 60px; height: 576px; padding: 80px calc((100% - 1024px) / 2) 0;}
+    article.name_section.bottom{bottom: -4px;}
+    article.name_section.bottom img{object-position: center 40px;}
+}
+@media all and (max-width: 1024px){
+    section.top_section{padding: 140px 20px 24px;}
+    .top_img_box{height: 480px;}
+
+    section.job_section{padding: 20px 20px 120px;}
+
+    section.portfolio_section{padding: 100px 20px;}
+    .thumbnail_box{height: 480px;}
+    .description_box p.big{font-size: 30px;}
+
+    .skill_section{padding: 100px 20px 80px;}
+
+    .career_section{padding: 80px 20px 100px;}
+
+    .contact_section{display: flex; flex-direction: column; gap: 60px; height: 538px; padding: 80px 20px 0;}
+    article.name_section.bottom{bottom: -5px;}
+    article.name_section.bottom img{object-position: center 32px;}
+}
+@media all and (max-width: 840px){
+    section.top_section{padding: 100px 20px 24px;}
+    .top_img_box{height: 440px;}
+
+    section.name_section{padding: 28px 0;}
+
+    section.job_section{flex-direction: column; padding: 24px 20px 80px;}
+    section.job_section article:last-child{width: 100%;}
+    section.job_section li{gap: 20px;}
+    section.job_section li:first-child{padding: 0 28px 28px 0;}
+    section.job_section li:nth-child(2){padding: 0 0 28px 28px;}
+    section.job_section li:last-child{padding: 28px 0 0;}
+
+    section.portfolio_section{padding: 80px 20px;}
+    section.portfolio_section .flex_title p{width: 88%;}
+    .project_list li{width: calc(50% - 10px); gap: 16px;}
+    .thumbnail_box{height: 400px;}
+    
+    .skill_section{padding: 80px 20px 60px; gap: 40px;}
+
+    .career_section{padding: 60px 20px 80px; gap: 40px;}
+    .career{gap: 16px; padding: 20px 0;}
+
+    .contact_section{padding: 60px 20px 0; height: 514px; gap: 40px;}
+    article.name_section.bottom img{object-position: center 24px;}
+}
+@media all and (max-width: 480px){
+    section.top_section{flex-direction: column; gap: 20px; padding: 80px 16px 24px;}
+    .hero{width: 100%;}
+    .top_img_box{width: 100%; height: 240px;}
+    .top_img_box img{object-position: center -64px;}
+
+    section.name_section{padding: 24px 0;}
+
+    section.job_section{padding: 24px 16px 60px;}
+    section.job_section li{width: 100% !important; padding: 16px 0 !important;}
+    section.job_section li:first-child{border-bottom: 1px solid #fff; padding-top: 0 !important; border-right: none;}
+    section.job_section li:last-child{padding-bottom: 0 !important;}
+    /* section.job_section li .mo_block{display: none;} */
+
+    section.portfolio_section{padding: 24px 16px 60px; gap: 40px;}
+    section.portfolio_section .flex_title p{flex-wrap: wrap; gap: 0; width: 100%;}
+    .project_list li{width: 100%;}
+    .project_list li:first-child{display: none;}
+    .thumbnail_box{height: 360px;}
+
+    .skill_section{padding: 60px 16px 40px; gap: 24px;}
+    .skill_box{gap: 12px;}
+    .skill{padding: 4px 12px; border-radius: 44px;}
+    .skill_icon2{width: 28px; height: 28px; border-radius: 28px;}
+    .skill_icon2 img{height: auto;}
+    .skill_icon2 i{font-size: 16px;}
+
+    .career_section{padding: 40px 16px 60px; gap: 24px;}
+    .career{gap: 8px; padding: 16px 0;}
+
+    .contact_section{padding: 60px 16px 0; gap: 20px; height: 342px;}
+    article.name_section.bottom img{object-position: center 32px;}
+    @media all and (max-width: 390px){
+        article.name_section.bottom img{object-position: center 28px;}
+    }
+    @media all and (max-width: 375px){
+        article.name_section.bottom img{object-position: center 26px;}
+    }
+}
