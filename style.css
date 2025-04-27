@@ -58,7 +58,7 @@ section.portfolio_section article.bottom{display: flex; flex-direction: column; 
 
 .contact_section{display: flex; flex-direction: column; gap: 60px; height: 694px; padding: 80px calc((100% - 1280px) / 2) 0; overflow: hidden;}
 article.name_section.bottom{position: absolute; bottom: -5px; left: 2%; width: 100%; padding: 0;}
-article.name_section.bottom img{ object-position: center 47px;}
+article.name_section.bottom img{ object-position: center 80px;}
 @media all and (max-width: 1440px){
     .contact_section{height: 620px;}
 }
