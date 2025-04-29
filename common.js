@@ -177,5 +177,43 @@ gsap.fromTo(skillSection,
       }
     });
   });
+
+    function syncNameSectionLeft() {
+        const section = document.querySelector('.contact_section');
+        const nameSection = document.querySelector('.name_section.bottom');
+
+        if (section && nameSection) {
+        const style = window.getComputedStyle(section);
+        const paddingLeft = style.getPropertyValue('padding-left');
+
+        nameSection.style.left = '-'+paddingLeft;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', syncNameSectionLeft);
+    window.addEventListener('resize', syncNameSectionLeft);
+
+    function updateNameImages() {
+        const imgs = document.querySelectorAll('.name_section img');
+
+        if (!imgs.length) return;
+
+        const isMobile = window.innerWidth <= 480;
+
+        imgs.forEach((img) => {
+          const currentSrc = img.getAttribute('src');
+
+          if (isMobile && currentSrc !== 'yejikim_mo.svg') {
+            img.setAttribute('src', 'yejikim_mo.svg');
+          } else if (!isMobile && currentSrc !== 'yejikim2.svg') {
+            img.setAttribute('src', 'yejikim2.svg');
+          }
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', updateNameImages);
+      window.addEventListener('resize', updateNameImages);
+
+
 });
 
