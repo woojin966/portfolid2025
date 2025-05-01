@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로젝트 상세 | Project Name</title>
+  <style>
+    body { font-family: 'Pretendard', sans-serif; margin: 0; padding: 0; color: #111; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 80px 24px; }
+    h1, h2, h3 { margin-bottom: 16px; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 24px; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-top: 48px; }
+    h3 { font-size: 18px; margin-top: 24px; }
+    p, li { font-size: 16px; }
+    ul { padding-left: 20px; }
+    .tag { display: inline-block; background: #eee; padding: 4px 10px; border-radius: 6px; font-size: 14px; margin-right: 6px; }
+    .img_box { margin: 32px 0; }
+    .img_box img { width: 100%; border-radius: 8px; }
+    .link_btn { display: inline-block; margin-top: 24px; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📱 Project Name – 모바일 앱 리디자인</h1>
+    <p><strong>기간:</strong> 2024.03 – 2024.04 (약 4주)<br />
+       <strong>참여도:</strong> 퍼블리싱 100%<br />
+       <strong>역할:</strong> 마크업 구조 설계, 반응형 구현, 접근성 개선, 인터랙션 개발</p>
+
+    <h2>1. 프로젝트 개요</h2>
+    <p>기존 앱의 사용성 문제를 해결하고, 시각적 일관성을 높이기 위한 리디자인 프로젝트입니다. 사용자 피드백을 기반으로 UX 흐름을 개선했고, 디자인 가이드를 기반으로 반응형 웹앱 형태로 퍼블리싱을 진행했습니다.</p>
+
+    <h2>2. 사용 기술 / 개발환경</h2>
+    <ul>
+      <li><span class="tag">HTML5</span> <span class="tag">SCSS</span> <span class="tag">Vanilla JS</span> <span class="tag">GSAP</span> <span class="tag">Zeplin</span></li>
+      <li>모듈화된 SCSS 구조로 컴포넌트 재사용성 확보</li>
+      <li>Zeplin을 통한 디자이너와 협업</li>
+    </ul>
+
+    <h2>3. 주요 구현 내용</h2>
+    <ul>
+      <li>메인 – 히어로 섹션 애니메이션 (GSAP)</li>
+      <li>스크롤 트리거 기반 콘텐츠 등장 애니메이션 (IntersectionObserver)</li>
+      <li>전 페이지 반응형 구현 (모바일/태블릿 대응)</li>
+      <li>시멘틱 태그 + aria 속성으로 접근성 향상</li>
+    </ul>
+
+    <div class="img_box">
+      <img src="img/hero-example.jpg" alt="메인 히어로 섹션 이미지 예시" />
+      <p style="text-align:center; font-size: 14px; color: #888;">▲ 메인 페이지 히어로 섹션 – GSAP 애니메이션 적용</p>
+    </div>
+
+    <h2>4. 작업 중 어려움 & 해결법</h2>
+    <ul>
+      <li><strong>문제:</strong> 모바일 환경에서 배경 이미지 위치 깨짐 발생  
+          <br /><strong>해결:</strong> `object-fit` 과 media query 조정으로 디바이스별 이미지 위치 조정</li>
+      <li><strong>문제:</strong> IntersectionObserver에서 여러 개 섹션 중복 실행  
+          <br /><strong>해결:</strong> `once: true` 속성과 `unobserve()` 활용으로 처리</li>
+    </ul>
+
+    <h2>5. 결과 및 성과</h2>
+    <ul>
+      <li>크로스브라우징 100% 완료 (Chrome, Safari, Edge)</li>
+      <li>누락 기능 및 디자인 피드백 전부 일정 내 처리</li>
+      <li>접근성 점수 Lighthouse 기준 95점 이상 확보</li>
+    </ul>
+
+    <h2>6. 링크</h2>
+    <p>
+      🔗 <a class="link_btn" href="https://프로젝트주소" target="_blank">프로젝트 바로가기</a>  
+      &nbsp;&nbsp;
+      💻 <a class="link_btn" href="https://github.com/woojin966/프로젝트레포" target="_blank">GitHub 보기</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -31,14 +31,15 @@ section.portfolio_section article.bottom{display: flex; flex-direction: column; 
 .thumbnail{width: 100%; height: 100%; object-fit: cover; background-color: yellow; border: 1px solid #000;}
 .thumbnail1{object-position: 80% bottom;}
 .thumbnail2{object-position: right top;}
-.description_box{display: flex; flex-direction: column; gap: 8px;}
-.description_box p.medium{color: yellow;}
-.description_box p.big{letter-spacing: -1px;}
+.productname_box{display: flex; flex-direction: column; gap: 8px;}
+.productname_box p.medium{color: yellow;}
+.productname_box p.big{letter-spacing: -1px;}
 .contribution_box{position: absolute; top: 0; left: 0; z-index: 1; display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: space-between; padding: 24px; background-color: rgba(0, 0, 0, .6); color: #fff; border: 2px solid yellow; opacity: 0; transition: .4s all ease-in-out;}
 .contribution_box.on{opacity: 1;}
-.contribution_box h3{margin: 0 0 24px; color: yellow !important;}
+.contribution_box h2{margin: 0 0 12px; color: yellow !important;}
 .contribution_box h3{ }
 .contribution_box p{color: #fff !important;}
+.description{display: flex; flex-direction: column; gap: 8px; }
 .contribution_box .use_skills{display: flex; gap: 8px;}
 .use_skills span{display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 4px; /*background: linear-gradient(168deg,rgba(255, 233, 38, 1) 0%, rgba(221, 255, 0, 1) 100%); color: #000;*/ border: 2px solid yellow; object-fit: contain;}
 .use_skills img{object-fit: contain; width: 80%;}
@@ -68,7 +69,7 @@ article.name_section.bottom img{width: 98vw;}
 
     section.portfolio_section{padding: 100px calc((100% - 1024px) / 2);}
     section.portfolio_section .flex_title p{width: 72%;}
-    .description_box p.big{font-size: 32px;}
+    .productname_box p.big{font-size: 32px;}
 
     .skill_section{padding: 100px calc((100% - 1024px) / 2) 80px;}
 
@@ -86,7 +87,7 @@ article.name_section.bottom img{width: 98vw;}
 
     section.portfolio_section{padding: 100px 20px;}
     .thumbnail_box{height: 480px;}
-    .description_box p.big{font-size: 30px;}
+    .productname_box p.big{font-size: 30px;}
 
     .skill_section{padding: 100px 20px 80px;}
 

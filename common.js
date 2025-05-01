@@ -1,6 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // ✅ Lenis 초기화
+    const lenis = new Lenis({
+        duration: 1.6,
+        easing: t => Math.min(2, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        smoothTouch: false
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+
+    ScrollTrigger.scrollerProxy(document.body, {
+        scrollTop(value) {
+            return arguments.length ? lenis.scrollTo(value) : window.scrollY;
+        },
+        getBoundingClientRect() {
+            return {
+                top: 0,
+                left: 0,
+                width: window.innerWidth,
+                height: window.innerHeight
+            };
+        },
+        pinType: document.body.style.transform ? "transform" : "fixed"
+    });
+
+    ScrollTrigger.defaults({ scroller: document.body });
+    ScrollTrigger.refresh();
+
     const animatedText = document.querySelector('.animated_text');
     const spans = animatedText.querySelectorAll('span');
     const hero = document.querySelector('.hero');
@@ -23,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     trigger: section,
                     start: "top 80%",
                     toggleActions: "play none none reverse",
-                    // markers: true
                 },
                 opacity: 1,
                 y: 0,
@@ -49,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: 'top 90%',
                 toggleActions: 'restart none none none',
                 invalidateOnRefresh: true,
-                // markers: true
             },
             xPercent: 0,
             opacity: 1,
@@ -67,39 +101,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 trigger: skillSection,
                 start: "top 80%",
                 toggleActions: "play none none reverse",
-                // markers: true
             },
             opacity: 1,
             duration: 1,
             ease: "power3.out",
             onStart: () => {
-                // skill_box가 위에서 아래로 나타나기 (3초 후)
                 gsap.to(skillBox, {
                     opacity: 1,
                     y: 0,
                     duration: 1,
-                    delay: 3, // 3초 후에 나타남
+                    delay: 3,
                     ease: "power3.out"
                 });
 
-                // skill_box 안에 있는 div.skill들이 위에서 아래로 펼쳐지기
                 gsap.fromTo(skillDivs,
                     {
                         opacity: 0,
                         y: -30,
-                        rotation: () => Math.random() * 30 - 15, // 처음 위치에서 랜덤 회전 적용
+                        rotation: () => Math.random() * 30 - 15,
                     },
                     {
                         scrollTrigger: {
                             trigger: skillBox,
                             start: "top 80%",
                             toggleActions: "play none none reverse",
-                            // markers: true,
                         },
                         opacity: 1,
                         y: 0,
                         stagger: 0.15,
-                        duration: 0.6, // ✅ 더 빠르게
+                        duration: 0.6,
                         ease: "power2.out",
                         overwrite: true
                     }
@@ -108,26 +138,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     );
 
-    // ✅ Intersection Observer 최적화: hero 텍스트 / label 애니메이션
+    // ✅ Intersection Observer: hero 텍스트 / label 애니메이션
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const target = entry.target;
 
             if (entry.isIntersecting) {
                 if (target === hero) {
-                    // 첫 번째 진입 시 텍스트 애니메이션 시작
-                    if (firstEntry) {
-                        setTimeout(() => {
-                            gsap.to(spans, {
-                                duration: 1.5,
-                                opacity: 1,
-                                y: 0,
-                                stagger: 0.1,
-                                ease: "power3.out",
-                            });
-                        }, 500); // 첫 진입 시 500ms 대기
-                        firstEntry = false;
-                    }
+                    gsap.killTweensOf(spans);
+                    gsap.set(spans, { opacity: 0, y: 0 });
+
+                    const delay = firstEntry ? 500 : 100;
+                    setTimeout(() => {
+                        currentTween = gsap.to(spans, {
+                            delay: 0,
+                            duration: 1.5,
+                            opacity: 1,
+                            y: 0,
+                            stagger: 0.1,
+                            ease: "power3.out",
+                        });
+                    }, delay);
+
+                    firstEntry = false;
                 }
 
                 if (target.classList.contains('label')) {
@@ -146,13 +179,17 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(hero);
     labels.forEach(label => observer.observe(label));
 
-    // ✅ trigger_btn hover 효과 최적화
     const triggerBtns = document.querySelectorAll('.trigger_btn');
     const contributionBoxes = document.querySelectorAll('.contribution_box');
 
     triggerBtns.forEach(function(btn) {
         btn.addEventListener('mouseenter', function() {
-            // contribution_box 상태 업데이트
+            // 모든 contribution_box에서 on 클래스 제거
+            contributionBoxes.forEach(function(box) {
+                box.classList.remove('on');
+            });
+
+            // 이 버튼과 관련된 contribution_box에 on 클래스 추가
             const contributionBox = this.parentElement.querySelector('.contribution_box');
             if (contributionBox) {
                 contributionBox.classList.add('on');
@@ -167,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ✅ Name section sync with contact section
     function syncNameSectionLeft() {
         const section = document.querySelector('.contact_section');
         const nameSection = document.querySelector('.name_section.bottom');
@@ -175,21 +211,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (section && nameSection) {
             const style = window.getComputedStyle(section);
             const paddingLeft = style.getPropertyValue('padding-left');
-            nameSection.style.left = `-${paddingLeft}`;
+
+            nameSection.style.left = '-'+paddingLeft;
         }
     }
 
     window.addEventListener('DOMContentLoaded', syncNameSectionLeft);
     window.addEventListener('resize', syncNameSectionLeft);
 
-    // ✅ Name images update
     function updateNameImages() {
         const imgs = document.querySelectorAll('.name_section img');
+
         if (!imgs.length) return;
 
         const isMobile = window.innerWidth <= 480;
+
         imgs.forEach((img) => {
             const currentSrc = img.getAttribute('src');
+
             if (isMobile && currentSrc !== 'yejikim_mo.svg') {
                 img.setAttribute('src', 'yejikim_mo.svg');
             } else if (!isMobile && currentSrc !== 'yejikim2.svg') {
@@ -200,4 +239,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('DOMContentLoaded', updateNameImages);
     window.addEventListener('resize', updateNameImages);
+
 });
