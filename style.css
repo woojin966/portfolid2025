@@ -137,7 +137,7 @@ article.name_section.bottom img{width: 98vw;}
     /* section.job_section li .mo_block{display: none;} */
 
     section.portfolio_section{padding: 24px 16px 60px; gap: 40px;}
-    section.portfolio_section .flex_title p{flex-wrap: wrap; gap: 0; width: 100%;}
+    section.portfolio_section .flex_title p{flex-wrap: wrap; justify-content: flex-start; gap: 0 12px; width: 100%;}
     .project_list li{width: 100%;}
     .project_list li:first-child{display: none;}
     .thumbnail_box{height: 360px;}

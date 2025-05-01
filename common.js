@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const labels = document.querySelectorAll('.label');
     const projectLists = document.querySelectorAll('.project_list');
     const sections = document.querySelectorAll('section');
-    const skillSection = document.querySelector('.skill_section'); // .skill_section
-    const skillBox = document.querySelector('.skill_box'); // .skill_box
-    const skillDivs = document.querySelectorAll('.skill'); // div.skill들
+    const skillSection = document.querySelector('.skill_section');
+    const skillBox = document.querySelector('.skill_box');
+    const skillDivs = document.querySelectorAll('.skill');
 
     let firstEntry = true;
     let currentTween = null;
@@ -60,81 +60,74 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ✅ skill_section 애니메이션
-gsap.fromTo(skillSection,
-    { opacity: 0 },
-    {
-        scrollTrigger: {
-            trigger: skillSection,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-            // markers: true
-        },
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-        onStart: () => {
-            // skill_box가 위에서 아래로 나타나기 (3초 후)
-            gsap.to(skillBox, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: 3, // 3초 후에 나타남
-                ease: "power3.out"
-            });
-
-            // skill_box 안에 있는 div.skill들이 위에서 아래로 펼쳐지기
-            gsap.fromTo(skillDivs,
-                {
-                    opacity: 0,
-                    y: -30,
-                    rotation: () => Math.random() * 30 - 15, // 처음 위치에서 랜덤 회전 적용
-                },
-                {
-                    scrollTrigger: {
-                        trigger: skillBox,
-                        start: "top 80%",
-                        toggleActions: "play none none reverse", // 스크롤로 다시 들어오면 재실행
-                        // markers: true,
-                    },
+    gsap.fromTo(skillSection,
+        { opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: skillSection,
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+                // markers: true
+            },
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            onStart: () => {
+                // skill_box가 위에서 아래로 나타나기 (3초 후)
+                gsap.to(skillBox, {
                     opacity: 1,
                     y: 0,
-                    //rotation: 0,
-                    stagger: 0.15,
-                    duration: 0.6, // ✅ 더 빠르게
-                    ease: "power2.out",
-                    overwrite: true
-                }
-            );
+                    duration: 1,
+                    delay: 3, // 3초 후에 나타남
+                    ease: "power3.out"
+                });
+
+                // skill_box 안에 있는 div.skill들이 위에서 아래로 펼쳐지기
+                gsap.fromTo(skillDivs,
+                    {
+                        opacity: 0,
+                        y: -30,
+                        rotation: () => Math.random() * 30 - 15, // 처음 위치에서 랜덤 회전 적용
+                    },
+                    {
+                        scrollTrigger: {
+                            trigger: skillBox,
+                            start: "top 80%",
+                            toggleActions: "play none none reverse",
+                            // markers: true,
+                        },
+                        opacity: 1,
+                        y: 0,
+                        stagger: 0.15,
+                        duration: 0.6, // ✅ 더 빠르게
+                        ease: "power2.out",
+                        overwrite: true
+                    }
+                );
+            }
         }
-    }
-);
+    );
 
-
-
-
-    // ✅ Intersection Observer: hero 텍스트 / label 애니메이션
+    // ✅ Intersection Observer 최적화: hero 텍스트 / label 애니메이션
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const target = entry.target;
 
             if (entry.isIntersecting) {
                 if (target === hero) {
-                    gsap.killTweensOf(spans);
-                    gsap.set(spans, { opacity: 0, y: 0 });
-
-                    const delay = firstEntry ? 500 : 100;
-                    setTimeout(() => {
-                        currentTween = gsap.to(spans, {
-                            delay: 0,
-                            duration: 1.5,
-                            opacity: 1,
-                            y: 0,
-                            stagger: 0.1,
-                            ease: "power3.out",
-                        });
-                    }, delay);
-
-                    firstEntry = false;
+                    // 첫 번째 진입 시 텍스트 애니메이션 시작
+                    if (firstEntry) {
+                        setTimeout(() => {
+                            gsap.to(spans, {
+                                duration: 1.5,
+                                opacity: 1,
+                                y: 0,
+                                stagger: 0.1,
+                                ease: "power3.out",
+                            });
+                        }, 500); // 첫 진입 시 500ms 대기
+                        firstEntry = false;
+                    }
                 }
 
                 if (target.classList.contains('label')) {
@@ -153,67 +146,58 @@ gsap.fromTo(skillSection,
     observer.observe(hero);
     labels.forEach(label => observer.observe(label));
 
+    // ✅ trigger_btn hover 효과 최적화
     const triggerBtns = document.querySelectorAll('.trigger_btn');
-  const contributionBoxes = document.querySelectorAll('.contribution_box');
+    const contributionBoxes = document.querySelectorAll('.contribution_box');
 
-  triggerBtns.forEach(function(btn) {
-    btn.addEventListener('mouseenter', function() {
-      // 모든 contribution_box에서 on 클래스 제거
-      contributionBoxes.forEach(function(box) {
-        box.classList.remove('on');
-      });
+    triggerBtns.forEach(function(btn) {
+        btn.addEventListener('mouseenter', function() {
+            // contribution_box 상태 업데이트
+            const contributionBox = this.parentElement.querySelector('.contribution_box');
+            if (contributionBox) {
+                contributionBox.classList.add('on');
+            }
+        });
 
-      // 이 버튼과 관련된 contribution_box에 on 클래스 추가
-      const contributionBox = this.parentElement.querySelector('.contribution_box');
-      if (contributionBox) {
-        contributionBox.classList.add('on');
-      }
+        btn.addEventListener('mouseleave', function() {
+            const contributionBox = this.parentElement.querySelector('.contribution_box');
+            if (contributionBox) {
+                contributionBox.classList.remove('on');
+            }
+        });
     });
 
-    btn.addEventListener('mouseleave', function() {
-      const contributionBox = this.parentElement.querySelector('.contribution_box');
-      if (contributionBox) {
-        contributionBox.classList.remove('on');
-      }
-    });
-  });
-
+    // ✅ Name section sync with contact section
     function syncNameSectionLeft() {
         const section = document.querySelector('.contact_section');
         const nameSection = document.querySelector('.name_section.bottom');
 
         if (section && nameSection) {
-        const style = window.getComputedStyle(section);
-        const paddingLeft = style.getPropertyValue('padding-left');
-
-        nameSection.style.left = '-'+paddingLeft;
+            const style = window.getComputedStyle(section);
+            const paddingLeft = style.getPropertyValue('padding-left');
+            nameSection.style.left = `-${paddingLeft}`;
         }
     }
 
     window.addEventListener('DOMContentLoaded', syncNameSectionLeft);
     window.addEventListener('resize', syncNameSectionLeft);
 
+    // ✅ Name images update
     function updateNameImages() {
         const imgs = document.querySelectorAll('.name_section img');
-
         if (!imgs.length) return;
 
         const isMobile = window.innerWidth <= 480;
-
         imgs.forEach((img) => {
-          const currentSrc = img.getAttribute('src');
-
-          if (isMobile && currentSrc !== 'yejikim_mo.svg') {
-            img.setAttribute('src', 'yejikim_mo.svg');
-          } else if (!isMobile && currentSrc !== 'yejikim2.svg') {
-            img.setAttribute('src', 'yejikim2.svg');
-          }
+            const currentSrc = img.getAttribute('src');
+            if (isMobile && currentSrc !== 'yejikim_mo.svg') {
+                img.setAttribute('src', 'yejikim_mo.svg');
+            } else if (!isMobile && currentSrc !== 'yejikim2.svg') {
+                img.setAttribute('src', 'yejikim2.svg');
+            }
         });
-      }
+    }
 
-      window.addEventListener('DOMContentLoaded', updateNameImages);
-      window.addEventListener('resize', updateNameImages);
-
-
+    window.addEventListener('DOMContentLoaded', updateNameImages);
+    window.addEventListener('resize', updateNameImages);
 });
-

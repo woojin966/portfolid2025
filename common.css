@@ -1,6 +1,5 @@
-h1{font-size: 200px;}
-h2{font-size: 168px;}
-h3{font-size: 88px;}
+h1{font-size: 168px;}
+h2{font-size: 88px;}
 .big{font-size: 40px;}
 .medium{font-size: 24px;}
 .text{font-size: 20px;}
@@ -27,9 +26,8 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 	.header{padding: 20px calc((100% - 1024px) / 2);}
 }
 @media all and (max-width: 1024px){
-	h1{font-size: 160px;}
-	h2{font-size: 140px;}
-	h3{font-size: 72px;}
+	h1{font-size: 140px;}
+	h2{font-size: 72px;}
 	.big{font-size: 32px;}
 	.medium{font-size: 22px;}
 	.text{font-size: 18px;}
@@ -39,9 +37,8 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 	.header{padding: 20px 20px;}
 }
 @media all and (max-width: 840px){
-	h1{font-size: 140px;}
-	h2{font-size: 120px;}
-	h3{font-size: 60px;}
+	h1{font-size: 120px;}
+	h2{font-size: 60px;}
 	.big{font-size: 30px;}
 	.medium{font-size: 20px;}
 	.text{font-size: 18px;}
@@ -53,9 +50,8 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 	.title{gap: 12px;}
 }
 @media all and (max-width: 480px){
-	h1{font-size: 120px;}
-	h2{font-size: 96px;}
-	h3{font-size: 40px;}
+	h1{font-size: 96px;}
+	h2{font-size: 40px;}
 	.big{font-size: 24px !important;}
 	.medium{font-size: 18px;}
 	.text{font-size: 16px;}
