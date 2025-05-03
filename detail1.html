@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="detail.css">
+    <title>2025 김예지 포트폴리오</title>
+</head>
+<body data-lenis-scroll>
+    <div class="body_wrap">
+        <section class="left_section">
+            <article>
+                <h3 class="bb">라이더스 <br/>홈페이지</h3>
+                <a href="https://www.rideus.co.kr/" class="medium b" target="_blank">https://www.rideus.co.kr/</a>
+            </article>
+            <article>
+                <ul>
+                    <li>
+                        <p class="small n">기간</p>
+                        <p class="medium sb">2024.11 - 2024.12</p>
+                    </li>
+                    <li>
+                        <p class="small n">참여도</p>
+                        <p class="medium sb">50%</p>
+                    </li>
+                    <li>
+                        <p class="small n">기간</p>
+                        <p class="medium sb">퍼블리싱 : 고정형 UI 설계 및 마크업, 인터랙션 구현</p>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <p class="small n">사용스킬</p>
+                <p class="medium mb">HTML, CSS, JQUERY</p>
+            </article>
+        </section>
+        <section class="right_section">
+            <article class="content1">
+                <p class="big b content_title"><span>1</span>프로젝트 개요</p>
+                <p class="text n">사용자의 스크롤에 반응하여 동적으로 변화하는 UI를 구현하는 퍼블리싱 작업을 담당했습니다.
+                특히, position: sticky와 스크롤 이벤트를 활용하여 사용자 경험을 강화하고, 콘텐츠 흐름에 맞춰 시각적 피드백을 제공하는 고정형 인터페이스를 구현했습니다.</p>
+            </article>
+            <article class="content2">
+                <p class="big b content_title"><span>2</span>주요 구현 내용</p>
+                <div>
+                    <img src="rideusLanding1.gif" />
+                    <p class="text n">CSS로 인터랙션 요소의 스타일링 및 상태 변화(hover, focus 등) 적용했습니다.</p>
+                </div>
+                <div>
+                    <img src="rideusLanding2.gif" />
+                    <p class="text n">position: sticky 속성을 활용하여 특정 UI(pagination 박스)가 스크롤 위치에 따라 고정되도록 처리하고, 스크롤 위치를 감지하여 해당 영역에 진입할 때 아이콘 부모 li에 .active 클래스를 동적으로 부여했습니다.</p>
+                </div>
+                    <div>
+                        <img src="rideusLanding3.gif" />
+                        <p class="text n">파트너사 로고를 순차적으로 등장시키는 애니메이션을 구현하였으며, Flexbox 기반의 반응형 레이아웃을 적용해 다양한 해상도에서도 균형 있게 배치되도록 구성하였습니다.</p>
+                    </div>
+                <div>
+                    <div class="flex">
+                        <img src="rideusLanding1_2.gif">
+                        <img src="rideusLanding2_2.gif">
+                        <img src="rideusLanding3_2.gif">
+                    </div>
+                    <p class="text n">모바일/데스크톱 환경에서의 레이아웃 차이를 고려하여 등 조건부 마크업, 스타일링과 인터렉션을 구현하였습니다</p>
+                </div>
+            </article>
+            <article class="content3">
+                <p class="big b content_title"><span>3</span>작업 중 어려움 & 해결법</p>
+                <p class="text n">
+                    <span class="mb">문제</span>
+                    IntersectionObserver와 jQuery를 함께 사용할 때, 모바일 환경에서 스크롤 이벤트와 요소 활성화 타이밍이 어긋나는 문제가 발생, 또한 해상도별 슬라이드 간 간격 계산이 정확하지 않아 위치 오류와 겹침 현상이 나타났습니다.
+                </p>
+                <p class="text n">
+                    <span class="mb">해결</span>
+                    스크롤 위치 오차 범위를 조정하고 resize, scroll, touch 이벤트를 통합 관리하여 동기화를 유지하고, 슬라이드 간격은 해상도별 vw 비율로 재계산하여 반응형 환경에서도 위치 충돌 없이 동작하도록 개선했습니다.
+                </p>
+            </article>
+            <article class="content4">
+                <p class="big b content_title"><span>4</span>결과 및 성과</p>
+                <div>
+                    <p class="text n">스크롤 위치 기반의 고정형 UI 구현을 통해 사용자가 현재 위치를 직관적으로 파악 가능</p>
+                    <p class="text n">시각적 피드백 강화로 인해 사용자 만족도 및 UI 체감 완성도 향상</p>
+                    <p class="text n">다양한 인터랙션 요소를 직접 구현함으로써 퍼블리셔로서 동적 UI 구성 능력 및 jQuery 활용 능력 강화</p>
+                </div>
+            </article>
+            <article class="content5">
+                <p class="big b content_title"><span>5</span>링크</p>
+                <h3 class="b">
+                    <a class="link_btn" href="https://www.rideus.co.kr/" target="_blank">
+                        <span class="linktext">프로젝트 바로가기</span>
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </h2>
+            </article>
+        </section>
+    </div>
+</body>
+</html>
