@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="detail.css">
+    <style>
+        @media all and (max-width: 480px){
+            section.left_section a br{display: block;}
+            /* article.content2 div.flex img{width: 100%;} */
+        }
+    </style>
+    <title>2025 김예지 포트폴리오</title>
+</head>
+<body data-lenis-scroll>
+    <div class="body_wrap">
+        <section class="left_section">
+            <article>
+                <h3 class="bb">라이더스 <br/>금호고속 랜딩</h3>
+                <a href="https://rideus.net/page/kumhotour-main/" class="medium b" target="_blank">https://rideus.net/<br/>page/kumhotour-main</a>
+            </article>
+            <article>
+                <ul>
+                    <li>
+                        <p class="small n">기간</p>
+                        <p class="medium sb">2025.03 - 2025.04</p>
+                    </li>
+                    <li>
+                        <p class="small n">참여도</p>
+                        <p class="medium sb">80%</p>
+                    </li>
+                    <li>
+                        <p class="small n">담당</p>
+                        <p class="medium sb">퍼블리싱 & UI기획 : 관광상품 섹션별 내용과 레퍼런스 찾기 등 기획 참여, 마크업과 스타일링 인터랙션 구현.</p>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <p class="small n">사용스킬</p>
+                <p class="medium mb">HTML, CSS, JQUERY</p>
+            </article>
+        </section>
+        <section class="right_section">
+            <article class="content1">
+                <p class="big b content_title"><span>1</span>프로젝트 개요</p>
+                <p class="text n">금호고속 관관 상품의 프로모션 영역과 요일별 상품 섹션을 개편하는 작업에 참여하였습니다. jQuery 없이 순수 JavaScript와 HTML/CSS로 마크업 및 동적 기능을 구현하였으며, 반응형 웹 환경에서 사용자 경험을 개선하는 데 중점을 두었습니다.</p>
+            </article>
+            <article class="content2">
+                <p class="big b content_title"><span>2</span>주요 구현 내용</p>
+                <div>
+                    <img src="kumho1.gif" />
+                    <p class="text n">순수 JavaScript로 화살표 버튼과 드래그 시 슬라이드 이동과 슬라이드별 배경을 바꾸는 기능을 구현하였습니다. 그리고 마지막 슬라이드와 첫 슬라이드 이동시 방향이 돌아가지 않고, 다음 슬라이드 이동 처럼 보일 수 있도록 하였습니다.</p>
+                </div>
+                <div>
+                    <img src="kumho2.gif" />
+                    <p class="text n">PC 환경은 Swiper를 사용하여 요일을 pagination을 커스텀하여 각 요일별 상품 슬라이드로 이동하게 하였습니다. 모바일에서는 각 상품 박스에 overflow-x를 넣어서 상품을 보일 수 있게 하기 위해, swiper사용대신 javaScript로 탭기능을 구현하여 반응형에 대응하였습니다.</p>
+                </div>
+                <div>
+                    <img src="kumho3.gif" />
+                    <p class="text n">javsScript로 탭 기능을로 탭 별 상품이 보일 수 있도록 과, 각 탭의 컨텐츠 박스 배경이 바뀔 수 있도록 구현하였습니다.</p>
+                </div>
+                <div>
+                    <div class="flex">
+                        <img src="kumho1_2.gif">
+                        <img src="kumho2_2.gif">
+                    </div>
+                    <p class="text n">모바일/데스크톱 환경에서의 레이아웃 차이를 고려하여 등 조건부 마크업, 스타일링과 인터렉션을 구현하였습니다</p>
+                </div>
+            </article>
+            <article class="content3">
+                <p class="big b content_title"><span>3</span>작업 중 어려움 & 해결법</p>
+                <p class="text n">
+                    <span class="mb">문제</span>
+                    슬라이더 구현 초기에 마지막 슬라이드에서 첫 슬라이드로 이동할 때 방향이 반대로 전환되어 사용자 경험이 불편하다는 피드백이 있었습니다.
+                </p>
+                <p class="text n">
+                    <span class="mb">해결</span>
+                    JavaScript 로직을 수정하여 항상 동일한 방향으로 순환되도록 개선. 추가로 애니메이션 속도 및 전환 효과를 조정하여 더욱 자연스러운 사용자 경험 제공하였습니다.
+                </p>
+            </article>
+            <article class="content4">
+                <p class="big b content_title"><span>4</span>결과 및 성과</p>
+                <div>
+                    <p class="text n">JavaScript만으로도 jQuery 없이 인터랙티브한 UI 구현 가능함을 입증</p>
+                    <p class="text n">슬라이드와 탭 UI 모두 크로스브라우징 및 반응형 환경에서 정상 작동</p>
+                    <p class="text n">유지보수성과 확장성이 높은 코드 구조를 적용하여 차후 기능 추가 시 용이함</p>
+                    <p class="text n">디자이너와 기획자로부터 사용자 경험 개선에 대한 긍정적 피드백 수렴</p>
+                </div>
+            </article>
+            <article class="content5">
+                <p class="big b content_title"><span>5</span>링크</p>
+                <h3 class="b">
+                    <a class="link_btn" href="https://rideus.net/page/kumhotour-main/" target="_blank">
+                        <span class="linktext">프로젝트 바로가기</span>
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </h2>
+            </article>
+        </section>
+    </div>
+</body>
+</html>

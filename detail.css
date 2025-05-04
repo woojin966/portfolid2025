@@ -17,14 +17,14 @@ article.content2 > div{margin-bottom: 60px;}
 article.content2 > div:last-child{margin-bottom: 0;}
 article.content2 img{width: 100%; border-radius: 8px; border: 1px solid #f1f1f1; margin-bottom: 20px;}
 article.content2 div.flex{display: flex; gap: 20px;}
-article.content2 div.flex img{width: calc(33.3333% - 14px);}
+article.content2 div.flex img{width: calc(50% - 10px);}
 article.content2 p.text{position: relative; padding-left: 24px;}
 article.content2 p.text::before{content: ''; position: absolute; top: 4px; left: 0;  width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 16px solid #000;}
 article.content2 p.text::after{content: ''; position: absolute; top: 5px; left: 1px;  width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 14px solid yellow;}
 
-article.content3 p.text{display: flex; gap: 12px; align-items: flex-start;}
+article.content3 p.text{display: flex; flex-direction: column; gap: 8px; align-items: flex-start;}
 article.content3 p.text:nth-child(2){margin-bottom: 20px;}
-article.content3 p.text span{width: 100px; padding: 4px 8px; background-color: #000; color: #fff; text-align: center;}
+article.content3 p.text span{width: max-content; padding: 4px 8px; background-color: #000; color: #fff; text-align: center;}
 
 article.content4 p.text{position: relative; padding-left: 12px; margin-bottom: 8px;}
 article.content4 p.text:last-child{margin-bottom: 0;}
@@ -43,20 +43,17 @@ article.content4 p.text::before{content: ''; position: absolute; top: 8px; left:
     .body_wrap{padding: 80px calc((100% - 1024px) / 2);}
 
     section.left_section{width: 40%;}
-    article.content3 p.text span{width: 132px;}
     section.right_section{width: 60%;}
 }
 @media all and (max-width: 1024px){
     .body_wrap{flex-direction: column; padding: 40px 20px 60px;}
     section.left_section{position: relative; width: 100%; top: 0;}
-    section.left_section h3 br{display: none;}
+    section.left_section br{display: none;}
     section.right_section{width: 100%;}
     section.right_section article{padding: 40px 0;}
     article.content2 > div{margin-bottom: 40px;}
-    article.content3 p.text span{width: 72px;}
 }
 @media all and (max-width: 840px){
-    article.content3 p.text span{width: 92px;}
 }
 @media all and (max-width: 480px){
     .body_wrap{padding: 20px 16px 40px; gap: 28px;}
@@ -66,10 +63,9 @@ article.content4 p.text::before{content: ''; position: absolute; top: 8px; left:
     .content_title span{width: 24px; height: 24px; border-radius: 24px; font-size: 16px;}
     article.content2 img{margin-bottom: 8px;}
     article.content2 div.flex{gap: 8px;}
-    article.content2 div.flex img{width: calc(33.3333% - 5px);}
+    article.content2 div.flex img{width: calc(50% - 4px);}
     article.content3 p.text{flex-direction: column; gap: 4px;}
     article.content3 p.text:nth-child(2){margin-bottom: 12px;}
-    article.content3 p.text span{width: max-content;}
 
     .link_btn{gap: 8px;}
     .link_btn span.arrow{width: 32px; height: 32px; border-radius: 32px; font-size: 24px;}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="detail.css">
+    <style>
+        article.content2 div.flow{overflow-x: auto;}
+        article.content2 div.flex img:first-child{width: calc(80% - 10px);}
+        article.content2 div.flex img:last-child{width: calc(20% - 10px);}
+
+        @media all and (max-width: 840px){
+            article.content2 div.flex{width: 1024px; }
+        }
+        @media all and (max-width: 480px){
+            section.left_section a br{display: block;}
+            article.content2 div.flex{width: 768px;  gap: 8px;}
+        }
+    </style>
+    <title>2025 김예지 포트폴리오</title>
+</head>
+<body data-lenis-scroll>
+    <div class="body_wrap">
+        <section class="left_section">
+            <article>
+                <h3 class="bb">라이더스<br/>파트너스</h3>
+                <a href="https://rideus.net/page/partner" class="medium b" target="_blank">https://rideus.net<br>/page/partner</a>
+            </article>
+            <article>
+                <ul>
+                    <li>
+                        <p class="small n">기간</p>
+                        <p class="medium sb">2023.07 - 2025.09</p>
+                    </li>
+                    <li>
+                        <p class="small n">참여도</p>
+                        <p class="medium sb">40%</p>
+                    </li>
+                    <li>
+                        <p class="small n">담당</p>
+                        <p class="medium sb">퍼블리싱 : 제휴사 모집 사이트 전체의 퍼블리싱을 전담하여 반응형 구현, 폼 UI 커스터마이징, 디자인 일관성 확보에 기여하였습니다.</p>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <p class="small n">사용스킬</p>
+                <p class="medium mb">HTML, CSS, JQUERY</p>
+            </article>
+        </section>
+        <section class="right_section">
+            <article class="content1">
+                <p class="big b content_title"><span>1</span>프로젝트 개요</p>
+                <p class="text n">라이더스 제휴사 모집을 위한 마이크로 사이트의 퍼블리싱을 담당하였습니다. 메인 소개 페이지와 제휴 제안 접수용 페이지로 구성되어 있으며, 브랜드 이미지 전달과 사용자 편의성을 고려한 반응형 웹 구현을 목표로 진행된 프로젝트입니다.</p>
+            </article>
+            <article class="content2">
+                <p class="big b content_title"><span>2</span>주요 구현 내용</p>
+                <div>
+                    <div class="flow">
+                        <div class="flex">
+                            <img src="partnera1.gif" />
+                            <img src="partners1_2.gif" />
+                        </div>
+                    </div>
+                    <p class="text n">디바이스 해상도에 따라 자동으로 이미지가 전환되도록 구현하기 위해, jQuery로 img의 src를 attr로 변경하고 미디어쿼리를 활용하여 반응형에 대응하였습니다.
+                    </p>
+                </div>
+                <div>
+                    <div class="flow">
+                        <div class="flex">
+                            <img src="partnera2.gif" />
+                            <img src="partners2_2.gif" />
+                        </div>
+                    </div>
+                    <p class="text n">
+                    PC와 모바일 환경에 따라 Flexbox 레이아웃과 Swiper 라이브러리를 적절히 활용하여 반응형 구조를 효율적으로 구현하였습니다.
+                    </p>
+                </div>
+                <div>
+                    <div class="flow">
+                        <div class="flex">
+                            <img src="partners3.gif" />
+                            <img src="partners3_2.gif" />
+                        </div>
+                    </div>
+                    <p class="text n">브라우저 기본 스타일을 제거하고, 디자인 시안에 맞게 커스터마이징 입력 필드, 라디오 버튼, 셀렉트 박스 등 전 요소에 사용자 친화적인 UI를 반영하였습니다.<br>
+                    전체 페이지의 시각적 통일성을 유지하기 위한 공통 컴포넌트 구조 적용 텍스트, 버튼, 간격 등 공통 요소에 대한 스타일 가이드 수립 및 적용하였습니다.</p>
+                </div>
+            </article>
+            <article class="content3">
+                <p class="big b content_title"><span>3</span>작업 중 어려움 & 해결법</p>
+                <p class="text n">
+                    <span class="mb">문제</span>
+                    초기 구현 시, 해상도별 이미지 대응이 부족해 모바일에서 이미지 크기나 위치가 어색하게 출력됨.<br>
+                    기본 HTML 폼 요소는 브라우저별로 스타일이 달라 프로젝트 전반의 UI 통일성이 무너지는 문제가 있었음.
+                </p>
+                <p class="text n">
+                    <span class="mb">해결</span>
+                    디바이스 크기를 조건을 걸어, jQuery로 img의 src를 attr로 변경하고 미디어쿼리로 이미지를 pc용 모바일용으로 교체하였습니다.<br>
+                    CSS 리셋과 함께 각 요소를 디자인 시안에 맞춰 완전히 커스터마이징하여 시각적 일관성과 사용자 편의성 확보하였습니다.
+                </p>
+            </article>
+            <article class="content4">
+                <p class="big b content_title"><span>4</span>결과 및 성과</p>
+                <div>
+                    <p class="text n">모든 디바이스에서 안정적인 레이아웃과 이미지 표현 구현</p>
+                    <p class="text n">제휴 제안 폼의 UI/UX 개선을 통해 사용자 이탈률 감소에 기여</p>
+                    <p class="text n">디자인 시안에 충실하면서도 실용적인 웹 퍼블리싱 수행</p>
+                </div>
+            </article>
+            <article class="content5">
+                <p class="big b content_title"><span>5</span>링크</p>
+                <h3 class="b">
+                    <a class="link_btn" href="https://rideus.net/page/partner" target="_blank">
+                        <span class="linktext">프로젝트 바로가기</span>
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </h2>
+            </article>
+        </section>
+    </div>
+</body>
+</html>
