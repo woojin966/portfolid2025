@@ -68,7 +68,7 @@ article.name_section.bottom img{width: 98vw;}
     section.job_section{padding: 24px calc((100% - 1024px) / 2) 120px;}
 
     section.portfolio_section{padding: 100px calc((100% - 1024px) / 2);}
-    section.portfolio_section .flex_title p{width: 72%;}
+    section.portfolio_section .flex_title p{width: 92%;}
     .productname_box p.big{font-size: 32px;}
 
     .skill_section{padding: 100px calc((100% - 1024px) / 2) 80px;}

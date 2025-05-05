@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="detail.css">
-    <style>
-        @media all and (max-width: 480px){
-            section.left_section a br{display: block;}
-            /* article.content2 div.flex img{width: 100%;} */
-        }
-    </style>
     <title>2025 김예지 포트폴리오</title>
 </head>
 <body data-lenis-scroll>
@@ -51,23 +45,26 @@
             <article class="content2">
                 <p class="big b content_title"><span>2</span>주요 구현 내용</p>
                 <div>
-                    <img src="kumho1.gif" />
+                    <div class="flow">
+                        <div class="flex">
+                            <img src="kumho1.gif" class="for_pc" />
+                            <img src="kumho1_2.gif" class="for_mo" />
+                        </div>
+                    </div>
                     <p class="text n">순수 JavaScript로 화살표 버튼과 드래그 시 슬라이드 이동과 슬라이드별 배경을 바꾸는 기능을 구현하였습니다. 그리고 마지막 슬라이드와 첫 슬라이드 이동시 방향이 돌아가지 않고, 다음 슬라이드 이동 처럼 보일 수 있도록 하였습니다.</p>
                 </div>
                 <div>
-                    <img src="kumho2.gif" />
+                    <div class="flow">
+                        <div class="flex">
+                            <img src="kumho2.gif" class="for_pc" />
+                            <img src="kumho2_2.gif" class="for_mo" />
+                        </div>
+                    </div>
                     <p class="text n">PC 환경은 Swiper를 사용하여 요일을 pagination을 커스텀하여 각 요일별 상품 슬라이드로 이동하게 하였습니다. 모바일에서는 각 상품 박스에 overflow-x를 넣어서 상품을 보일 수 있게 하기 위해, swiper사용대신 javaScript로 탭기능을 구현하여 반응형에 대응하였습니다.</p>
                 </div>
                 <div>
                     <img src="kumho3.gif" />
                     <p class="text n">javsScript로 탭 기능을로 탭 별 상품이 보일 수 있도록 과, 각 탭의 컨텐츠 박스 배경이 바뀔 수 있도록 구현하였습니다.</p>
-                </div>
-                <div>
-                    <div class="flex">
-                        <img src="kumho1_2.gif">
-                        <img src="kumho2_2.gif">
-                    </div>
-                    <p class="text n">모바일/데스크톱 환경에서의 레이아웃 차이를 고려하여 등 조건부 마크업, 스타일링과 인터렉션을 구현하였습니다</p>
                 </div>
             </article>
             <article class="content3">

@@ -7,19 +7,6 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="detail.css">
-    <style>
-        article.content2 div.flow{overflow-x: auto;}
-        article.content2 div.flex img:first-child{width: calc(80% - 10px);}
-        article.content2 div.flex img:last-child{width: calc(20% - 10px);}
-
-        @media all and (max-width: 840px){
-            article.content2 div.flex{width: 1024px; }
-        }
-        @media all and (max-width: 480px){
-            section.left_section a br{display: block;}
-            article.content2 div.flex{width: 768px;  gap: 8px;}
-        }
-    </style>
     <title>2025 김예지 포트폴리오</title>
 </head>
 <body data-lenis-scroll>
@@ -37,7 +24,7 @@
                     </li>
                     <li>
                         <p class="small n">참여도</p>
-                        <p class="medium sb">40%</p>
+                        <p class="medium sb">50%</p>
                     </li>
                     <li>
                         <p class="small n">담당</p>
@@ -60,8 +47,8 @@
                 <div>
                     <div class="flow">
                         <div class="flex">
-                            <img src="partnera1.gif" />
-                            <img src="partners1_2.gif" />
+                            <img src="partnera1.gif" class="for_pc" />
+                            <img src="partners1_2.gif" class="for_mo" />
                         </div>
                     </div>
                     <p class="text n">디바이스 해상도에 따라 자동으로 이미지가 전환되도록 구현하기 위해, jQuery로 img의 src를 attr로 변경하고 미디어쿼리를 활용하여 반응형에 대응하였습니다.
@@ -70,8 +57,8 @@
                 <div>
                     <div class="flow">
                         <div class="flex">
-                            <img src="partnera2.gif" />
-                            <img src="partners2_2.gif" />
+                            <img src="partnera2.gif" class="for_pc" />
+                            <img src="partners2_2.gif" class="for_mo" />
                         </div>
                     </div>
                     <p class="text n">
@@ -81,8 +68,8 @@
                 <div>
                     <div class="flow">
                         <div class="flex">
-                            <img src="partners3.gif" />
-                            <img src="partners3_2.gif" />
+                            <img src="partners3.gif" class="for_pc" />
+                            <img src="partners3_2.gif" class="for_mo" />
                         </div>
                     </div>
                     <p class="text n">브라우저 기본 스타일을 제거하고, 디자인 시안에 맞게 커스터마이징 입력 필드, 라디오 버튼, 셀렉트 박스 등 전 요소에 사용자 친화적인 UI를 반영하였습니다.<br>

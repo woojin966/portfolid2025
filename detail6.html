@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="detail.css">
+    <title>2025 김예지 포트폴리오</title>
+</head>
+<body data-lenis-scroll>
+    <div class="body_wrap">
+        <section class="left_section">
+            <article>
+                <h3 class="bb"><span class="big">2023</span> frieze <br/>Chauffeur</h3>
+                <a href="https://booking.triseup.com/frieze" class="medium b" target="_blank">https://booking.triseup.com<br>/frieze</a>
+            </article>
+            <article>
+                <ul>
+                    <li>
+                        <p class="small n">기간</p>
+                        <p class="medium sb">2023.04 - 2023.05</p>
+                    </li>
+                    <li>
+                        <p class="small n">참여도</p>
+                        <p class="medium sb">60%</p>
+                    </li>
+                    <li>
+                        <p class="small n">담당</p>
+                        <p class="medium sb">퍼블리싱 : 기존 기능을 고려한 구조 유지와 조건 분기 대응, 이메일 호환성 문제 해결까지 아우르는 퍼블리싱을 담당하며, 기능 안정성과 사용자 경험 향상 모두에 기여하였습니다.</p>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <p class="small n">사용스킬</p>
+                <p class="medium mb">HTML, CSS, JAVASCRIPT, PHP</p>
+            </article>
+        </section>
+        <section class="right_section">
+            <article class="content1">
+                <p class="big b content_title"><span>1</span>프로젝트 개요</p>
+                <p class="text n">기존 쇼퍼 예약 사이트의 기능과 구조를 유지하면서, 사용자 중심의 UI로 리디자인된 서치폼 및 인증 영역의 퍼블리싱을 진행하였습니다. 또한 다양한 메일 플랫폼에서도 동일하게 보일 수 있도록 HTML 이메일 마크업을 구현하였으며, 전체 구조 및 마크업의 일관성과 유지보수성을 고려한 컴포넌트화 작업을 병행하였습니다.</p>
+            </article>
+            <article class="content2">
+                <p class="big b content_title"><span>2</span>주요 구현 내용</p>
+                <div>
+                    <div class="flow">
+                        <div class="flex">
+                            <img src="frieze1.gif" class="for_pc" />
+                            <img src="frieze1_2.gif" class="for_mo" />
+                        </div>
+                    </div>
+                    <p class="text n">기존 쇼퍼 예약 사이트의 구조와 기능을 그대로 유지하면서, JavaScript에서 사용 중인 클래스 이름과 마크업 구조(부모-자식 관계)를 그대로 반영하여, position 등의 스타일을 사용해 서치폼 퍼블리싱 작업을 진행하였습니다.
+                    </p>
+                </div>
+                <div>
+                    <div class="flow">
+                        <div class="flex">
+                            <img src="frieze2.gif" class="for_pc" />
+                            <img src="frieze2_2.gif" class="for_mo" />
+                        </div>
+                    </div>
+                    <p class="text n">예약자와 탑승자가 동일한 경우와 다른 경우에 따라 인증 횟수가 달라지므로, 이를 반영하기 위해 개발자의 PHP 코드에 맞춰 동적으로 마크업을 수정하고, 각 조건에 맞는 클래스를 추가하여 스타일을 세밀하게 적용했습니다. 또한, 인풋과 버튼 등의 요소는 컴포넌트화하여 코드의 재사용성과 유지보수성을 높였습니다.</p>
+                </div>
+                <div>
+                    <div class="flow">
+                        <div class="flex">
+                            <img src="frieze3.gif" class="for_pc" />
+                            <img src="frieze3_2.gif" class="for_mo" />
+                        </div>
+                    </div>
+                    <p class="text n">이메일 작업 시, 각 메일 플랫폼(Google, Yahoo, 국내 포털 등)에서 코드가 다르게 처리된다는 점을 인지하고, 이를 해결하기 위해 flexbox 대신 table 기반 레이아웃을 사용하여, 모든 주요 플랫폼에서 이메일 콘텐츠가 동일하게 표시될 수 있도록 최적화했습니다.</p>
+                </div>
+            </article>
+            <article class="content3">
+                <p class="big b content_title"><span>3</span>작업 중 어려움 & 해결법</p>
+                <p class="text n">
+                    <span class="mb">문제</span>
+                    기존 예약 시스템에서 JavaScript 로직과 PHP 출력 구조가 클래스 이름 및 DOM 관계에 강하게 의존하고 있어 마크업 변경 시 기능 충돌이 우려되었습니다. 또한, 예약자와 탑승자에 따른 인증 방식 분기와 다양한 이메일 플랫폼에서의 UI 표시 차이로 인해, 이메일 콘텐츠가 다르게 표시되는 문제도 발생했습니다.
+                </p>
+                <p class="text n">
+                    <span class="mb">해결</span>
+                    기존 클래스명과 DOM 구조를 유지하며 position, flex, z-index 등을 활용해 스타일을 개선하고, PHP 조건문에 따라 인증 방식별로 동적으로 마크업과 클래스를 처리하여 정확한 스타일을 적용했습니다. 또한 이메일 마크업은 table 기반 레이아웃과 인라인 스타일을 사용하여 Gmail, Yahoo, 국내 포털 등에서 동일하게 보이도록 최적화했습니다.
+                </p>
+            </article>
+            <article class="content4">
+                <p class="big b content_title"><span>4</span>결과 및 성과</p>
+                <div>
+                    <p class="text n">기존 기능을 유지하면서도 UI의 일관성과 가독성을 향상시킨 퍼블리싱 구조 구현</p>
+                    <p class="text n">조건 분기형 인증 흐름 대응을 위한 유연한 마크업 처리 경험 확보</p>
+                    <p class="text n">주요 메일 플랫폼(Gmail, Yahoo, 국내 포털) 간 호환성을 고려한 HTML 이메일 구현으로 시각적 통일성 확보</p>
+                    <p class="text n">주요 입력 요소 및 버튼을 컴포넌트화하여 코드 재사용성과 유지보수성 향상</p>
+                </div>
+            </article>
+            <article class="content5">
+                <p class="big b content_title"><span>5</span>링크</p>
+                <h3 class="b">
+                    <a class="link_btn" href="https://booking.triseup.com/frieze" target="_blank">
+                        <span class="linktext">프로젝트 바로가기</span>
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </h2>
+            </article>
+        </section>
+    </div>
+</body>
+</html>
