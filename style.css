@@ -67,6 +67,7 @@ article.name_section.bottom img{width: 98vw;}
 
 @media all and (max-width: 1280px){
     section.top_section{padding: 200px calc((100% - 1024px) / 2) 24px;}
+    .top_img_box{height: 520px;}
 
     section.job_section{padding: 24px calc((100% - 1024px) / 2) 120px;}
 
