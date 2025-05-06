@@ -13,7 +13,11 @@ h3{font-size: 58px;}
 .n{font-weight: 400;}
 
 .body_wrap{background-color: #000; color: #fff; overflow: hidden;}
-.header{display: flex; gap: 20px; justify-content: center; padding: 20px calc((100% - 1280px) / 2); width: 100%; background-color: #fff; color: #000; text-align: center;}
+.header{position: fixed; width: 100%; height: 60px; display: flex; gap: 20px; justify-content: space-between; padding: 20px calc((100% - 1280px) / 2); width: 100%; background-color: #fff; color: #000; text-align: center; z-index: 1; transition: transform 0.3s ease-in-out; will-change: transform;}
+.header.hide {transform: translateY(-100%);}
+.header > div{display: flex; align-items: center; gap: 8px; cursor: pointer;}
+.header ul{display: flex; align-items: center; gap: 20px;}
+
 section.white{background-color: #fff;}
 .label{color: yellow;}
 section.white .label, section.grey .label{color: #000;}
@@ -24,9 +28,6 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 .mo_block{display: none;}
 
 @media all and (max-width: 1280px){
-	.header{padding: 20px calc((100% - 1024px) / 2);}
-}
-@media all and (max-width: 1024px){
 	h1{font-size: 140px;}
 	h2{font-size: 72px;}
 	h3{font-size: 52px;}
@@ -36,13 +37,25 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 	.small{font-size: 16px;}
 	.mini{font-size: 14px;}
 
-	.header{padding: 20px 20px;}
+	.header{padding: 20px calc((100% - 1024px) / 2);}
 }
-@media all and (max-width: 840px){
-	h1{font-size: 120px;}
+@media all and (max-width: 1024px){
+	h1{font-size: 100px;}
 	h2{font-size: 60px;}
 	h3{font-size: 44px;}
 	.big{font-size: 30px;}
+	.medium{font-size: 20px;}
+	.text{font-size: 18px;}
+	.small{font-size: 16px;}
+	.mini{font-size: 14px;}
+
+	.header{padding: 20px 20px;}
+}
+@media all and (max-width: 840px){
+	h1{font-size: 100px;}
+	h2{font-size: 52px;}
+	h3{font-size: 40px;}
+	.big{font-size: 28px;}
 	.medium{font-size: 20px;}
 	.text{font-size: 18px;}
 	.small{font-size: 16px;}
@@ -53,7 +66,7 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 	.title{gap: 12px;}
 }
 @media all and (max-width: 480px){
-	h1{font-size: 96px;}
+	h1{font-size: 80px;}
 	h2{font-size: 40px;}
 	h3{font-size: 32px;}
 	.big{font-size: 24px !important;}

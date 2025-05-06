@@ -12,17 +12,16 @@
 <body data-lenis-scroll>
     <div class="body_wrap">
         <header class="header white">
-            <p class="text mb">🌻🌼</span>
-            <p class="text mb">/* 예지킴 */</p>
-            <p class="text mb">🌼🌻</span>
-                <!-- <nav aria-label="Main navigation">
-                    <ul>
-                        <li><a href="#home" tabindex="1">Home</a></li>
-                        <li><a href="#about" tabindex="2">About</a></li>
-                        <li><a href="#projects" tabindex="3">Projects</a></li>
-                        <li><a href="#contact" tabindex="4">Contact</a></li>
-                    </ul>
-                </nav> -->
+            <div class="logo">
+                <p class="text mb">/* 예지킴 */</p>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="#job"  tabindex="1">Job</a></li>
+                    <li><a href="#project" class="small" tabindex="2">Projects</a></li>
+                    <li><a href="#skill" class="small" tabindex="3">Skill</a></li>
+                </ul>
+            </nav>
         </header>
         <section role="banner" aria-labelledby="hero" class="top_section white">
             <article class="hero">
@@ -63,7 +62,7 @@
         <section role="region" aria-labelledby="name" class="name_section">
             <img src="yejikim2.svg" class="name_img" />
         </section>
-        <section role="region" aria-labelledby="job" class="job_section">
+        <section role="region" id="job" aria-labelledby="job" class="job_section">
             <article class="title left">
                 <p class="medium sb label">입니다📝</p>
                 <h2 class="">이런 직무를 <br class="mo_hidden"/><br class="mo_block">할 수 있어요.</h2>
@@ -100,7 +99,7 @@
                 </ul>
             </article>
         </section>
-        <section role="region" aria-labelledby="project" class="portfolio_section">
+        <section role="region" id="project" aria-labelledby="project" class="portfolio_section">
             <article class="title">
                 <p class="medium sb label">제가 참여한 프로젝트 입니다💻</p>
                 <h2 class="flex_title">
@@ -422,7 +421,7 @@
             </article>
         </section>
         <div class="grey">
-            <section role="region" aria-labelledby="skill" class="skill_section grey">
+            <section role="region" id="skill" aria-labelledby="skill" class="skill_section grey">
                 <article class="title">
                     <p class="medium sb label">아래 기술들로 협업 중!🔧💡</p>
                 </article>
