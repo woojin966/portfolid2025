@@ -62,7 +62,7 @@ article.content4 p.text::before{content: ''; position: absolute; top: 8px; left:
     article.content2 div.flex img:first-child{width: calc(80% - 8px);}
     article.content2 div.flex img:last-child{width: calc(20% - 8px);} */
 }
-@media all and (min-height: 600px) and (max-height: 800px){
+@media all and (min-width: 1024px) and (min-height: 600px) and (max-height: 800px){
     .body_wrap{padding: 40px calc((100% - 1024px) / 2);}
     section.left_section{top: 40px; padding: 28px;}
     section.left_section p.medium{font-size: 18px;}
