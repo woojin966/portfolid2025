@@ -70,7 +70,7 @@ article.name_section.bottom img{width: 98vw;}
 
     section.portfolio_section{padding: 100px calc((100% - 1024px) / 2);}
     .thumbnail_box{height: 520px;}
-    section.portfolio_section .flex_title p{width: 92%;}
+    section.portfolio_section .flex_title p{width: 74%;}
     .productname_box p.big{font-size: 32px;}
 
     .skill_section{padding: 100px calc((100% - 1024px) / 2) 80px;}
@@ -85,9 +85,9 @@ article.name_section.bottom img{width: 98vw;}
     section.top_section{padding: 200px 20px 24px;}
     .top_img_box{height: 480px;}
 
-    section.job_section{padding: 20px 20px 120px;}
+    section.job_section{padding: 20px 20px 60px;}
 
-    section.portfolio_section{padding: 100px 20px;}
+    section.portfolio_section{padding: 60px 20px 100px;}
     section.portfolio_section .flex_title p{width: 65%;}
     .thumbnail_box{height: 480px;}
     .productname_box p.big{font-size: 30px;}
@@ -103,9 +103,11 @@ article.name_section.bottom img{width: 98vw;}
 @media all and (min-width: 1024px) and (min-height: 600px) and (max-height: 800px){
     .top_img_box{height: 520px;}
     .thumbnail_box{height: 520px;}
+    section.portfolio_section{padding: 20px calc((100% - 1024px) / 2) 100px;}
     .skill_section{padding: 100px calc((100% - 1024px) / 2) 52px;}
     .career_section{padding: 52px calc((100% - 1024px) / 2) 100px;}
     @media all and (max-width: 1024px){
+        section.portfolio_section{padding: 20px 20px 100px;}
         .skill_section{padding: 100px 20px 52px;}
         .career_section{padding: 52px 20px 100px;}
     }
@@ -124,7 +126,7 @@ article.name_section.bottom img{width: 98vw;}
     section.job_section li:nth-child(2){padding: 0 0 28px 28px;}
     section.job_section li:last-child{padding: 28px 0 0;}
 
-    section.portfolio_section{padding: 80px 20px;}
+    section.portfolio_section{padding: 40px 20px 80px;}
     section.portfolio_section .flex_title p{width: 100%; justify-content: flex-start;}
     .project_list li{width: calc(50% - 10px); gap: 16px;}
     .thumbnail_box{height: 400px;}
