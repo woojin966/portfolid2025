@@ -88,7 +88,7 @@ article.name_section.bottom img{width: 98vw;}
     section.job_section{padding: 20px 20px 60px;}
 
     section.portfolio_section{padding: 60px 20px 100px;}
-    section.portfolio_section .flex_title p{width: 65%;}
+    section.portfolio_section .flex_title p{width: 65% !important;}
     .thumbnail_box{height: 480px;}
     .productname_box p.big{font-size: 30px;}
 
@@ -106,6 +106,10 @@ article.name_section.bottom img{width: 98vw;}
     section.portfolio_section{padding: 20px calc((100% - 1024px) / 2) 100px;}
     .skill_section{padding: 100px calc((100% - 1024px) / 2) 52px;}
     .career_section{padding: 52px calc((100% - 1024px) / 2) 100px;}
+    section.portfolio_section .flex_title p{width: 90%;}
+    @media all and (max-width: 1280px){
+        section.portfolio_section .flex_title p{width: 74%;}
+    }
     @media all and (max-width: 1024px){
         section.portfolio_section{padding: 20px 20px 100px;}
         .skill_section{padding: 100px 20px 52px;}
@@ -127,7 +131,7 @@ article.name_section.bottom img{width: 98vw;}
     section.job_section li:last-child{padding: 28px 0 0;}
 
     section.portfolio_section{padding: 40px 20px 80px;}
-    section.portfolio_section .flex_title p{width: 100%; justify-content: flex-start;}
+    section.portfolio_section .flex_title p{width: 100% !important; justify-content: flex-start;}
     .project_list li{width: calc(50% - 10px); gap: 16px;}
     .thumbnail_box{height: 400px;}
 
