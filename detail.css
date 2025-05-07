@@ -57,7 +57,7 @@ article.content4 p.text::before{content: ''; position: absolute; top: 8px; left:
     a.home{position: fixed; bottom: 20px; right: 20px; z-index: 1; }
     section.right_section{width: 100%;}
     section.right_section article{padding: 40px 0;}
-    article.content2 > div{margin-bottom: 20px;}
+    article.content2 > div{margin-bottom: 28px;}
     /* article.content2 div.flex{flex-direction: column; gap: 16px;}
     article.content2 div.flex img:first-child{width: calc(80% - 8px);}
     article.content2 div.flex img:last-child{width: calc(20% - 8px);} */
@@ -74,13 +74,15 @@ article.content4 p.text::before{content: ''; position: absolute; top: 8px; left:
     article.content2 div.flex{width: 1024px; }
 }
 @media all and (max-width: 480px){
-    .body_wrap{padding: 20px 16px 40px; gap: 28px;}
+    .body_wrap{padding: 20px 16px 40px !important; gap: 28px;}
 
     section.left_section{padding: 20px;}
     a.home{right: 16px;}
     .content_title{margin-bottom: 20px; gap: 8px;}
     .content_title span{width: 24px; height: 24px; border-radius: 24px; font-size: 16px;}
     section.left_section a br{display: block;}
+    section.right_section article{padding: 28px 0;}
+    article.content2 > div{margin-bottom: 20px;}
     article.content2 div.flex{width: 768px;}
     article.content3 p.text{flex-direction: column; gap: 4px;}
     article.content3 p.text:nth-child(2){margin-bottom: 12px;}
