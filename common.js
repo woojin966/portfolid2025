@@ -319,4 +319,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // ticking = true;
         }
     });
+
+    // index.html 스크롤위치 기억하기
+
+        const savedScroll = sessionStorage.getItem('scrollY');
+        if (savedScroll) {
+            window.scrollTo(0, parseInt(savedScroll));
+            sessionStorage.removeItem('scrollY'); // 복원 후 삭제
+        }
 });
