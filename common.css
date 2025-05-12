@@ -1,6 +1,7 @@
 h1{font-size: 168px;}
-h2{font-size: 88px;}
+h2, .h2{font-size: 88px;}
 h3{font-size: 58px;}
+address{font-style: normal; font-weight: bold; cursor: pointer;}
 .big{font-size: 40px;}
 .medium{font-size: 24px;}
 .text{font-size: 20px;}
@@ -30,7 +31,7 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 
 @media all and (max-width: 1280px){
 	h1{font-size: 140px;}
-	h2{font-size: 72px;}
+	h2, .h2{font-size: 72px;}
 	h3{font-size: 52px;}
 	.big{font-size: 32px;}
 	.medium{font-size: 22px;}
@@ -43,7 +44,7 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 }
 @media all and (max-width: 1024px){
 	h1{font-size: 100px;}
-	h2{font-size: 60px;}
+	h2, .h2{font-size: 60px;}
 	h3{font-size: 44px;}
 	.big{font-size: 30px;}
 	.medium{font-size: 20px;}
@@ -55,7 +56,7 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 }
 @media all and (max-width: 840px){
 	h1{font-size: 100px;}
-	h2{font-size: 52px;}
+	h2, .h2{font-size: 52px;}
 	h3{font-size: 40px;}
 	.big{font-size: 28px;}
 	.medium{font-size: 20px;}
@@ -66,12 +67,11 @@ section.white h1, section.white h2, section.white h3, section.white p{color: #00
 	.header h1{font-size: 18px;}
 
 	.mo_hidden{display: none;}
-	.mo_block{display: block;}
 	.title{gap: 12px;}
 }
 @media all and (max-width: 480px){
 	h1{font-size: 80px;}
-	h2{font-size: 40px;}
+	h2, .h2{font-size: 40px;}
 	h3{font-size: 32px;}
 	.big{font-size: 24px !important;}
 	.medium{font-size: 18px;}
