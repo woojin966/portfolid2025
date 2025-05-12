@@ -240,82 +240,83 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('DOMContentLoaded', updateNameImages);
     window.addEventListener('resize', updateNameImages);
 
-    // ===============================
-// 1. lenis-scrolling 감지 후 스크롤 실행
-// ===============================
-function waitForLenisIdle(callback) {
-    const body = document.body;
-  
-    if (!body.classList.contains("lenis-scrolling")) {
-      callback(); // 바로 실행
-      return;
-    }
-  
-    const observer = new MutationObserver(() => {
-      if (!body.classList.contains("lenis-scrolling")) {
-        observer.disconnect();
-        callback(); // 클래스가 사라지면 실행
-      }
-    });
-  
-    observer.observe(body, {
-      attributes: true,
-      attributeFilter: ["class"]
-    });
-  }
-  
-  // ===============================
-  // 2. 앵커 스크롤 이동
-  // ===============================
-  const links = document.querySelectorAll('a[href^="#"]');
-  const header = document.querySelector("header");
-  
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-  
-      if (targetElement) {
-        const offset = header.offsetHeight;
-  
-        lenis.scrollTo(targetElement, {
-          offset: -offset,
-          immediate: false, // 부드럽게 스크롤
+    // lenis-scrolling 감지 후 스크롤 실행
+    function waitForLenisIdle(callback) {
+        const body = document.body;
+
+        if (!body.classList.contains("lenis-scrolling")) {
+            callback();
+            return;
+        }
+
+        const observer = new MutationObserver(() => {
+            if (!body.classList.contains("lenis-scrolling")) {
+                observer.disconnect();
+                callback();
+            }
         });
-      }
-    });
-  });
-  
-  // ===============================
-  // 3. 로고 클릭 시 페이지 상단으로 이동
-  // ===============================
-  const logo = document.querySelector(".logo");
-  
-  if (logo) {
-    logo.addEventListener("click", function (e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-  
-  // ===============================
-  // 4. lenis용 헤더 숨김/보임 처리
-  // ===============================
-  let lastScroll = 0;
-  let ticking = false;
-  
-  lenis.on("scroll", ({ scroll }) => {
-    if (scroll > 120) {
-      if (scroll > lastScroll) {
-        header.classList.add("hide");
-      } else {
-        header.classList.remove("hide");
-      }
-    } else {
-      header.classList.remove("hide");
+
+        observer.observe(body, {
+        attributes: true,
+        attributeFilter: ["class"]
+        });
     }
-  
-    lastScroll = scroll;
-  });
+
+    // 앵커 스크롤 이동
+    const links = document.querySelectorAll('a[href^="#"]');
+    const header = document.querySelector("header");
+
+    links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const offset = header.offsetHeight;
+
+                lenis.scrollTo(targetElement, {
+                    offset: -offset,
+                    immediate: false, // 부드럽게 스크롤
+                });
+            }
+        });
+    });
+
+    // 로고 클릭 시 페이지 상단으로 이동
+    const logo = document.querySelector(".logo");
+
+    if (logo) {
+        logo.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    // lenis용 헤더 숨김/보임 처리
+    let lastScroll = 0;
+    let ticking = false;
+
+    lenis.on("scroll", ({ scroll }) => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const currentScroll = scroll;
+
+                if (currentScroll > 120) {
+                    if (currentScroll > lastScroll) {
+                        header.classList.add("hide");
+                    } else {
+                        header.classList.remove("hide");
+                    }
+                } else {
+                    header.classList.remove("hide");
+                }
+
+                lastScroll = currentScroll;
+                ticking = false;
+            });
+
+            ticking = true;
+        }
+    });
 });
