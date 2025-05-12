@@ -106,7 +106,7 @@ article.name_section.bottom img{width: 98vw;}
     section.portfolio_section{padding: 20px calc((100% - 1024px) / 2) 100px;}
     .skill_section{padding: 100px calc((100% - 1024px) / 2) 52px;}
     .career_section{padding: 52px calc((100% - 1024px) / 2) 100px;}
-    section.portfolio_section .flex_title p{width: 90%;}
+    section.portfolio_section .flex_title > span.paragraph{width: 90%;}
     @media all and (max-width: 1280px){
         section.portfolio_section .flex_title > span.paragraph{width: 74%;}
     }
