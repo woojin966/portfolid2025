@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ticking = false;
             });
 
-            ticking = true;
+            // ticking = true;
         }
     });
 });
