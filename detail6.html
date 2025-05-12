@@ -42,7 +42,7 @@
                 </a>
             </nav>
         </section>
-        <section class="right_section">
+        <section class="right_section" aria-label="프로젝트 상세 소개">
             <article class="content1">
                 <p class="big b content_title"><span>1</span>프로젝트 개요</p>
                 <p class="text n">기존 쇼퍼 예약 사이트의 기능과 구조를 유지하면서, 사용자 중심의 UI로 리디자인된 서치폼 및 인증 영역의 퍼블리싱을 진행하였습니다. 또한 다양한 메일 플랫폼에서도 동일하게 보일 수 있도록 HTML 이메일 마크업을 구현하였으며, 전체 구조 및 마크업의 일관성과 유지보수성을 고려한 컴포넌트화 작업을 병행하였습니다.</p>
@@ -52,8 +52,8 @@
                 <div>
                     <div class="flow">
                         <div class="flex">
-                            <img src="frieze1.gif" class="for_pc" />
-                            <img src="frieze1_2.gif" class="for_mo" />
+                            <img src="frieze1.gif" class="for_pc" loading="lazy" decoding="async" alt="프로젝트 예시 이미지" />
+                            <img src="frieze1_2.gif" class="for_mo" loading="lazy" decoding="async" alt="프로젝트 예시 이미지" />
                         </div>
                     </div>
                     <p class="text n">기존 쇼퍼 예약 사이트의 구조와 기능을 그대로 유지하면서, JavaScript에서 사용 중인 클래스 이름과 마크업 구조(부모-자식 관계)를 그대로 반영하여, position 등의 스타일을 사용해 서치폼 퍼블리싱 작업을 진행하였습니다.
@@ -62,8 +62,8 @@
                 <div>
                     <div class="flow">
                         <div class="flex">
-                            <img src="frieze2.gif" class="for_pc" />
-                            <img src="frieze2_2.gif" class="for_mo" />
+                            <img src="frieze2.gif" class="for_pc" loading="lazy" decoding="async" alt="프로젝트 예시 이미지" />
+                            <img src="frieze2_2.gif" class="for_mo" loading="lazy" decoding="async" alt="프로젝트 예시 이미지" />
                         </div>
                     </div>
                     <p class="text n">예약자와 탑승자가 동일한 경우와 다른 경우에 따라 인증 횟수가 달라지므로, 이를 반영하기 위해 개발자의 PHP 코드에 맞춰 동적으로 마크업을 수정하고, 각 조건에 맞는 클래스를 추가하여 스타일을 세밀하게 적용했습니다. 또한, 인풋과 버튼 등의 요소는 컴포넌트화하여 코드의 재사용성과 유지보수성을 높였습니다.</p>
@@ -71,8 +71,8 @@
                 <div>
                     <div class="flow">
                         <div class="flex">
-                            <img src="frieze3.gif" class="for_pc" />
-                            <img src="frieze3_2.gif" class="for_mo" />
+                            <img src="frieze3.gif" class="for_pc" loading="lazy" decoding="async" alt="프로젝트 예시 이미지" />
+                            <img src="frieze3_2.gif" class="for_mo" loading="lazy" decoding="async" alt="프로젝트 예시 이미지" />
                         </div>
                     </div>
                     <p class="text n">이메일 작업 시, 각 메일 플랫폼(Google, Yahoo, 국내 포털 등)에서 코드가 다르게 처리된다는 점을 인지하고, 이를 해결하기 위해 flexbox 대신 table 기반 레이아웃을 사용하여, 모든 주요 플랫폼에서 이메일 콘텐츠가 동일하게 표시될 수 있도록 최적화했습니다.</p>
@@ -101,9 +101,9 @@
             <article class="content5">
                 <p class="big b content_title"><span>5</span>링크</p>
                 <h3 class="b">
-                    <a class="link_btn" href="https://booking.triseup.com/frieze" target="_blank">
+                    <a class="link_btn" href="https://booking.triseup.com/frieze" target="_blank" rel="noopener noreferrer">
                         <span class="linktext">프로젝트 바로가기</span>
-                        <span class="arrow">&rarr;</span>
+                        <span class="arrow" aria-hidden="true">&rarr;</span>
                     </a>
                 </h2>
             </article>
