@@ -72,7 +72,7 @@ article.content4 p.text::before{content: ''; position: absolute; top: 8px; left:
     p.big{font-size: 32px;}
 }
 
-@media all and (max-width: 840px){
+@media all and (max-width: 768px){
     article.content2 div.flex{width: 1024px; }
 }
 @media all and (max-width: 480px){
