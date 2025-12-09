@@ -179,30 +179,32 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(hero);
     labels.forEach(label => observer.observe(label));
 
-    const triggerBtns = document.querySelectorAll('.trigger_btn');
-    const contributionBoxes = document.querySelectorAll('.contribution_box');
+    const triggerBtns = document.querySelectorAll('.project_btn');
 
-    triggerBtns.forEach(function(btn) {
-        btn.addEventListener('mouseenter', function() {
-            // 모든 contribution_box에서 on 클래스 제거
-            contributionBoxes.forEach(function(box) {
-                box.classList.remove('on');
-            });
+triggerBtns.forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        
+        // 가장 가까운 li 찾아서 scope 제한하기
+        const card = btn.closest('.project_card');
+        if (!card) return;
 
-            // 이 버튼과 관련된 contribution_box에 on 클래스 추가
-            const contributionBox = this.parentElement.querySelector('.contribution_box');
-            if (contributionBox) {
-                contributionBox.classList.add('on');
-            }
-        });
+        const contributionBox = card.querySelector('.contribution_box');
+        if (!contributionBox) return;
 
-        btn.addEventListener('mouseleave', function() {
-            const contributionBox = this.parentElement.querySelector('.contribution_box');
-            if (contributionBox) {
-                contributionBox.classList.remove('on');
-            }
-        });
+        contributionBox.classList.add('on');
     });
+
+    btn.addEventListener('mouseleave', () => {
+
+        const card = btn.closest('.project_card');
+        if (!card) return;
+
+        const contributionBox = card.querySelector('.contribution_box');
+        if (!contributionBox) return;
+
+        contributionBox.classList.remove('on');
+    });
+});
 
     function syncNameSectionLeft() {
         const section = document.querySelector('.contact_section');

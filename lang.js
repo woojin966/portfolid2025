@@ -2,6 +2,12 @@
 
 let currentLang = 'en';
 
+if (navigator.language.startsWith('ko')) {
+  currentLang = 'kr';
+} else {
+  currentLang = 'en';
+}
+
 function setLanguage(lang) {
    // label
   document.querySelector('.job_section .label').textContent = i18n[lang].label;
@@ -17,15 +23,38 @@ function setLanguage(lang) {
   items[1].querySelector('.text').innerHTML = i18n[lang].css_desc;
   items[2].querySelector('.text').innerHTML = i18n[lang].js_desc;
 
+  // section3
+  // view projuect cards by language
+  const projectCards = document.querySelectorAll('.project_card');
+
+  if (lang === 'en') {
+    projectCards.forEach((card, index) => {
+      card.style.display = index < 3 ? '' : 'none';
+    });
+  }
+  if (lang === 'kr') {
+    projectCards.forEach(card => {
+      card.style.display = '';
+    });
+  }
+
   currentLang = lang;
 }
 
-// 버튼 토글
+/* 3) 페이지 최초 로드 시 자동 적용 */
+window.addEventListener('DOMContentLoaded', () => {
+  setLanguage(currentLang);
+
+  // 버튼 표시 업데이트
+  const toggleBtn = document.getElementById('langToggle');
+  toggleBtn.textContent = currentLang === 'en' ? 'EN' : 'KR';
+});
+
+/* 4) 토글 버튼으로 언어 변경 */
 const toggleBtn = document.getElementById('langToggle');
 
 toggleBtn.addEventListener('click', () => {
   const next = currentLang === 'en' ? 'kr' : 'en';
   setLanguage(next);
-
-  toggleBtn.textContent = next.toUpperCase(); // EN <-> KR
+  toggleBtn.textContent = next.toUpperCase();
 });
