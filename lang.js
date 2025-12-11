@@ -94,6 +94,10 @@ careerItems.forEach((el, idx) => {
   }
 });
 
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 50);
+
   currentLang = lang;
 }
 
