@@ -49,6 +49,9 @@ body.en .project_list li:first-child{display: none;}
 .project_buttons{display: flex; gap: 12px; align-items: center;}
 .project_buttons a{padding: 12px 16px; border: 1px solid #fff; cursor: pointer;}
 
+section.grey{gap: 40px;}
+section.grey .label{position: relative; z-index: 1; width: max-content;}
+section.grey .label::before{content: ''; position: absolute; bottom: 6px; left: 0; z-index: -1; width: 100%; height: 28%; background-color: yellow;}
 .skill_section{display: flex; flex-direction: column;  padding: 120px 60px;}
 .skill_box{display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;}
 .skill{display: flex; gap: 8px; align-items: center; padding: 8px 16px; border-radius: 52px; background-color: #fff;}
@@ -60,8 +63,13 @@ body.en .project_list li:first-child{display: none;}
 .career{display: flex; gap: 20px; flex-direction: column; padding: 28px 0; border-bottom: 1px solid #000;}
 .career:first-child{padding-top: 0;}
 .career h3{width: 80%;}
+.career br{display: none;}
+.career:nth-child(2){letter-spacing: -1.4px;}
+body.en .career br{display: block;}
+body.en .career h3{line-height: 1.2;}
 
-.contact_section{display: flex; flex-direction: column; padding: 120px 60px 0; overflow: hidden;}
+.contact_section{display: flex; flex-direction: column; padding: 120px 60px 0; gap: 40px; overflow: hidden;}
+.contact_section article:nth-child(2){margin-bottom: 80px;}
 article.name_section.bottom{width: 100%; padding: 0; bottom: -10px;}
 article.name_section.bottom img{width: 98vw;}
 /* article.name_section.bottom img{ object-position: center 80px;} */
@@ -136,12 +144,15 @@ article.name_section.bottom img{width: 98vw;}
     .use_skills span{width: 44px; height: 44px;}
     .project_buttons a{padding: 8px 12px;}
 
+    section.grey{gap: 28px;}
     .skill_section{padding: 80px 20px;}
 
-    .career_section{padding: 0 20px 80px;}
+    .career_section{padding: 0 20px 80px; }
+    .contact_section article:nth-child(2){margin-bottom: 40px;}
     .career{gap: 16px; padding: 20px 0;}
+    body.en .career br.mo_block{display: block !important;}
 
-    .contact_section{padding: 80px 20px 0;}
+    .contact_section{padding: 80px 20px 0; gap: 28px;}
 }
 @media all and (max-width: 480px){
     section.top_section{padding: 60px 16px 60px;}
@@ -166,6 +177,7 @@ article.name_section.bottom img{width: 98vw;}
     .project_list li:first-child{display: none;}
     .thumbnail_box{height: 400px;}
 
+    section.grey{gap: 20px;}
     .skill_section{padding: 60px 16px;}
     .skill_box{gap: 12px;}
     .skill{padding: 4px 12px; border-radius: 44px;}
@@ -176,5 +188,6 @@ article.name_section.bottom img{width: 98vw;}
     .career_section{padding: 0 16px 60px;}
     .career{gap: 8px; padding: 16px 0;}
 
-    .contact_section{padding: 60px 16px 0;}
+    .contact_section{padding: 60px 16px 0; gap: 20px;}
+    .contact_section article:nth-child(2){margin-bottom: 28px;}
 }

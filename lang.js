@@ -12,6 +12,10 @@ function setLanguage(lang) {
    // label
   document.querySelector('.job_section .label').textContent = i18n[lang].section2_label;
   document.querySelector('.portfolio_section .label').textContent = i18n[lang].section3_label;
+  document.querySelector('.skill_section .label').textContent = i18n[lang].skills_msg;
+  document.querySelector('.career_section .label').textContent = i18n[lang].career_msg;
+  document.querySelector('.contact_section .label').textContent = i18n[lang].contact_label;
+  document.querySelector('.contact_section .title p.big').innerHTML = i18n[lang].contact_msg;
 
   // section title
   document.querySelector('.job_section h2').innerHTML = i18n[lang].jobTitle;
@@ -58,6 +62,37 @@ function setLanguage(lang) {
     card.querySelector(".project_buttons a.site").textContent = i18n[lang].project_btn_visit;
   });
 
+  // section 6
+  const careerItems = document.querySelectorAll('.career_box .career');
+const careerData = i18n[lang].career_items;
+
+careerItems.forEach((el, idx) => {
+  const data = careerData[idx];
+
+  // period
+  const periodEl = el.querySelector('p.medium');
+  if (periodEl) periodEl.textContent = data.period;
+
+  // h3
+  const h3 = el.querySelector('h3');
+  if (!h3) return;
+
+  // reset
+  h3.innerHTML = "";
+
+  // title
+  h3.append(document.createTextNode(data.title));
+
+  // role
+  if (data.role) {
+    const br = document.createElement('br');
+    h3.append(br);
+
+    const span = document.createElement('span');
+    span.innerHTML = `: ${data.role}`;
+    h3.append(span);
+  }
+});
 
   currentLang = lang;
 }
