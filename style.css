@@ -23,12 +23,16 @@ section.job_section li{display: flex;
     border-radius: 0px;
     padding: 20px;
     width: calc(50% - 14px);}
+section.job_section li:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+  transition: all 0.3s ease; cursor: auto;
+}
 section.job_section li:last-child{width: 100%;}
 section.job_section li > div{display: flex; gap: 12px; align-items: center;}
 section.job_section li .icon{display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; background: linear-gradient(168deg,rgba(255, 233, 38, 1) 0%, rgba(221, 255, 0, 1) 100%); }
-section.job_section li .icon i{color: #000; font-size: 16px; font-weight: 400;}
+section.job_section li .icon i{color: #000; font-size: 16px;}
 section.job_section li p{line-height: 1.2;}
-
 
 section.portfolio_section{display: flex; flex-direction: column; padding: 0 60px 120px;}
 section.portfolio_section .flex_title{display: flex; flex-direction: column;}
@@ -43,7 +47,8 @@ body.en .project_list li:first-child{display: none;}
 .thumbnail1{object-position: 80% bottom;}
 .thumbnail2{object-position: right top;}
 .contribution_box{position: absolute; top: 0; left: 0; z-index: 1; display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: space-between; padding: 20px; background-color: rgba(0, 0, 0, .6); color: #fff; border: 2px solid yellow; opacity: 0; transition: .4s all ease-in-out;}
-.contribution_box.on{opacity: 1;}
+.contribution_box.on{opacity: 1; z-index: 3;}
+.contribution_box p.medium{display: flex; align-items: center; justify-content: space-between;}
 .contribution_box h2{margin: 0 0 12px; color: yellow !important;}
 .contribution_box h3{ }
 .contribution_box p{color: #fff !important;}
@@ -57,6 +62,13 @@ body.en .project_list li:first-child{display: none;}
 .productname_box p.big{letter-spacing: -1px;}
 .project_buttons{display: flex; gap: 12px; align-items: center;}
 .project_buttons a{padding: 12px 16px; border: 1px solid #fff; cursor: pointer;}
+.detail_btn{position: absolute; bottom: 20px; right: 20px; padding: 12px 16px; border: 1px solid #fff; cursor: pointer; color: #fff; background-color: rgba(255,255,255,.4); z-index: 2;}
+@media (hover: hover) {
+  .detail_btn, .contribution_close { display: none; }
+}
+@media (hover: none) {
+  .detail_btn, .contribution_close { display: inline-flex; }
+}
 
 section.grey{gap: 40px;}
 section.grey .label{position: relative; z-index: 1; width: max-content;}
@@ -145,7 +157,7 @@ article.name_section.bottom img{width: 98vw;}
     .project_list li{width: calc(50% - 10px); gap: 16px;}
     .contribution_box p br{display: none;}
     .use_skills span{width: 44px; height: 44px;}
-    .project_buttons a{padding: 8px 12px;}
+    .project_buttons a, .detail_btn{padding: 8px 12px;}
 
     section.grey{gap: 28px;}
     .skill_section{padding: 80px 20px;}
@@ -173,6 +185,7 @@ article.name_section.bottom img{width: 98vw;}
     .use_skills span{width: 40px; height: 40px;}
     .project_list li:first-child{display: none;}
     .thumbnail_box{height: 400px;}
+    .detail_btn{right: 16px;}
 
     section.grey{gap: 20px;}
     .skill_section{padding: 60px 16px;}

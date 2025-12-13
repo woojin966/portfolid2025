@@ -179,32 +179,63 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(hero);
     labels.forEach(label => observer.observe(label));
 
-    const triggerBtns = document.querySelectorAll('.project_btn');
+    const isTouchDevice = window.matchMedia('(hover: none)').matches;
+    const projectBtns = document.querySelectorAll('.project_btn');
+    const detailBtns = document.querySelectorAll('.detail_btn');
+    const closeBtns = document.querySelectorAll('.contribution_close');
+    const allBoxes = document.querySelectorAll('.contribution_box');
 
-triggerBtns.forEach(btn => {
-    btn.addEventListener('mouseenter', () => {
-        
-        // 가장 가까운 li 찾아서 scope 제한하기
-        const card = btn.closest('.project_card');
-        if (!card) return;
+    function getContributionBox(el) {
+        const card = el.closest('.project_card');
+        if (!card) return null;
+        return card.querySelector('.contribution_box');
+    }
 
-        const contributionBox = card.querySelector('.contribution_box');
-        if (!contributionBox) return;
+    function closeAllBoxes(except = null) {
+        allBoxes.forEach(box => {
+            if (box !== except) box.classList.remove('on');
+        }); 
+    }
 
-        contributionBox.classList.add('on');
+    function openBox(box) {
+        if (!box) return;
+        closeAllBoxes(box);
+        box.classList.add('on');
+    }
+
+    function closeBox(box) {
+        if (!box) return;
+        box.classList.remove('on');
+    }
+
+    if (!isTouchDevice) {
+        projectBtns.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                const box = getContributionBox(btn);
+                openBox(box);
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                const box = getContributionBox(btn);
+                closeBox(box);
+            });
+        });
+    }
+
+    detailBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const box = getContributionBox(btn);
+            openBox(box);
+        });
     });
 
-    btn.addEventListener('mouseleave', () => {
-
-        const card = btn.closest('.project_card');
-        if (!card) return;
-
-        const contributionBox = card.querySelector('.contribution_box');
-        if (!contributionBox) return;
-
-        contributionBox.classList.remove('on');
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const box = btn.closest('.contribution_box');
+            closeBox(box);
+        });
     });
-});
 
     function syncNameSectionLeft() {
         const section = document.querySelector('.contact_section');

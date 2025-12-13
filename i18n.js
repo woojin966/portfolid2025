@@ -27,8 +27,8 @@ const i18n = {
         percent: "100%",
         meta: "Design, Publishing, Development / 2025",
         desc: `
-          A responsive shopping mall built with Vue 3 and Vite, featuring a full e-commerce flow from product listing to checkout. Vuex manages order, shipping, and payment data, while Vue Router handles page navigation.<br>
-          I implemented SCSS-based UI components and key interactions—such as quantity control, option selection, address search, and modals—using the Composition API.
+          A responsive e-commerce shopping mall built with Vue 3 and Vite, covering the full user flow from product listing to checkout.<br>
+          I implemented SCSS-based UI components and key interactions such as quantity control, option selection, address search, and modals, focusing on usability and a smooth shopping experience.
         `,
         title:"Vue proj. REIAS"
       },
@@ -36,7 +36,8 @@ const i18n = {
         percent: "100%",
         meta: "Design, Publishing, Development / 2025",
         desc: `
-          A personal Vue project inspired by Netflix. Movie data is fetched via the TMDB API and displayed by section and genre. Clicking a poster opens a modal showing the image, title, rating, score, and description. Like/Dislike selections trigger a notification and are saved locally to persist the user’s state.
+          A personal Vue project inspired by Netflix, displaying movie data fetched from the TMDB API by section and genre. <br>
+          Users can view detailed movie information in a modal, and Like/Dislike interactions are stored locally to preserve user preferences across sessions.
         `,
         title:"Vue proj. VUEFLIX"
       },
@@ -44,8 +45,8 @@ const i18n = {
         percent: "100%",
         meta: "Design, Publishing, Development / 2025",
         desc: `
-          A personal Vue project providing date, time, location, and weather information, along with a full To-Do management feature. Users can add tasks, mark them as complete, and filter between “To-Do” and “Done.”<br>
-          The app also includes multiple delete options—delete all, delete selected, and delete completed—to offer a more convenient and flexible task-management experience.
+          A personal Vue application that provides date, time, location, and weather information alongside a full to-do management system. <br>
+          Users can add, complete, filter, and delete tasks, with multiple delete options designed to improve usability and task management efficiency.
         `,
         title:"Vue proj. Todo APP"
       },
