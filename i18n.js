@@ -1,11 +1,18 @@
 // i18n.js
 const i18n = {
   en: {
-    section2_label: "Capabilities",
+    section2_label: "Services",
     jobTitle: "WHAT I DO",
-    markup_desc: "Semantic, clean and scalable HTML structure.",
-    css_desc: "Modular, maintainable styling with modern CSS.",
-    js_desc: "Interactive UI with JavaScript / jQuery. Familiar with Vue / PHP workflows collaboration.",
+    services_title1: "Web UI Publishing",
+    services_dec1:"Clean, semantic HTML and structured SCSS for maintainable and accessible UI.",
+    services_title2: "Responsive Web Design",
+    services_dec2:"Flexible layouts optimized for desktop, tablet, and mobile devices.",
+    services_title3: "Vue UI Development",
+    services_dec3:"Interactive UI development using Vue and modern JavaScript, with a focus on components, state, and user experience.",
+    services_title4: "Figma to Code",
+    services_dec4:"Translating design systems into accurate and production-ready UI.",
+    services_title5: "Landing Page & Portfolio Sites",
+    services_dec5:"Fast, lightweight one-page websites with clear structure and visual impact.",
     section3_label: "My Projects",
     project_intro_h2: `
         <span class="paragraph"><span>I</span><span>BUILD</span><span>BEAUTIFUL</span></span>
@@ -119,9 +126,20 @@ const i18n = {
   kr: {
     section2_label: "가능한 직무",
     jobTitle: "이런 직무를 <br class='mo_hidden'/><br class='mo_block'>할 수 있어요",
-    markup_desc: "시멘틱 구조 기반의 깔끔하고 읽기 쉬운 마크업을 <br class='mo_block'>구현합니다.",
-    css_desc: "유지보수 쉬운 구조적 CSS 설계를 지향합니다.",
-    js_desc: "JavaScript/jQuery로 인터랙션을 구현하며 <br class='mo_block'>Vue/PHP구조를 이해해 협업을 원활하게 진행합니다.",
+    services_title1: "웹 UI 퍼블리싱",
+services_dec1: "시멘틱한 HTML 구조와 체계적인 SCSS 설계로 유지보수와 접근성을 고려한 UI를 구현합니다.",
+
+services_title2: "반응형 웹 디자인",
+services_dec2: "데스크톱, 태블릿, 모바일 환경에 최적화된 유연한 레이아웃을 설계합니다.",
+
+services_title3: "Vue UI 개발",
+services_dec3: "Vue와 JavaScript를 활용해 컴포넌트 기반의 인터랙티브한 UI를 구현하며, 상태 관리와 사용자 경험을 중점으로 개발합니다.",
+
+services_title4: "디자인 → 코드 구현",
+services_dec4: "디자인 시스템과 시안을 기반으로 실제 서비스에 바로 적용 가능한 UI 코드로 구현합니다.",
+
+services_title5: "랜딩 페이지 & 포트폴리오 사이트",
+services_dec5: "구조가 명확하고 가볍게 로딩되는 원페이지 웹사이트를 제작합니다.",
     section3_label: "제가 참여한 프로젝트 입니다.",
     project_intro_h2: `
         <span class="paragraph"><span>사용자에게</span><span>아름답고</span></span>

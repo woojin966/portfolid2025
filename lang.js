@@ -25,9 +25,16 @@ function setLanguage(lang) {
   const items = document.querySelectorAll('.job_section li');
 
   // section2 text
-  items[0].querySelector('.text').innerHTML = i18n[lang].markup_desc;
-  items[1].querySelector('.text').innerHTML = i18n[lang].css_desc;
-  items[2].querySelector('.text').innerHTML = i18n[lang].js_desc;
+  items[0].querySelector('h3').innerHTML = i18n[lang].services_title1;
+  items[1].querySelector('h3').innerHTML = i18n[lang].services_title2;
+  items[2].querySelector('h3').innerHTML = i18n[lang].services_title3;
+  items[3].querySelector('h3').innerHTML = i18n[lang].services_title4;
+  items[4].querySelector('h3').innerHTML = i18n[lang].services_title5;
+  items[0].querySelector('.text').innerHTML = i18n[lang].services_dec1;
+  items[1].querySelector('.text').innerHTML = i18n[lang].services_dec2;
+  items[2].querySelector('.text').innerHTML = i18n[lang].services_dec3;
+  items[3].querySelector('.text').innerHTML = i18n[lang].services_dec4;
+  items[4].querySelector('.text').innerHTML = i18n[lang].services_dec5;
 
   // section3
   // view projuect cards by language

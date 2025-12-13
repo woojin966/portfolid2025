@@ -11,15 +11,24 @@ section.name_section{padding: 60px 0; height: max-content; text-align: center;}
 .name_img{width: 96%;}
 
 section.job_section{display: flex; justify-content: space-between; padding: 120px 60px;}
-section.job_section article:last-child{width: 60%;}
-section.job_section ul{display: flex; flex-wrap: wrap;}
-section.job_section li{display: flex; flex-direction: column; gap: 28px; }
-section.job_section li:first-child{padding: 0 40px 40px 0; width: 50%; border-right: 1px solid #fff;}
-section.job_section li:nth-child(2){padding: 0 0 40px 40px ;width: 50%;}
-section.job_section li:last-child{padding: 40px 0 0; width: 100%; border-top: 1px solid #fff;}
-section.job_section li .icon{display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 4px; background: linear-gradient(168deg,rgba(255, 233, 38, 1) 0%, rgba(221, 255, 0, 1) 100%); }
-section.job_section li .icon i{color: #000;}
-section.job_section li > div{display: flex; flex-direction: column; gap: 12px;}
+section.job_section article:last-child{width: 64%;}
+section.job_section ul{display: flex; flex-wrap: wrap; gap: 20px; width: 100%;}
+section.job_section li{display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 0px;
+    padding: 20px;
+    width: calc(50% - 14px);}
+section.job_section li:last-child{width: 100%;}
+section.job_section li > div{display: flex; gap: 12px; align-items: center;}
+section.job_section li .icon{display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; background: linear-gradient(168deg,rgba(255, 233, 38, 1) 0%, rgba(221, 255, 0, 1) 100%); }
+section.job_section li .icon i{color: #000; font-size: 16px; font-weight: 400;}
+section.job_section li p{line-height: 1.2;}
+
 
 section.portfolio_section{display: flex; flex-direction: column; padding: 0 60px 120px;}
 section.portfolio_section .flex_title{display: flex; flex-direction: column;}
@@ -33,7 +42,7 @@ body.en .project_list li:first-child{display: none;}
 .thumbnail{width: 100%; height: 100%; object-fit: cover;  border: 1px solid #000;}
 .thumbnail1{object-position: 80% bottom;}
 .thumbnail2{object-position: right top;}
-.contribution_box{position: absolute; top: 0; left: 0; z-index: 1; display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: space-between; padding: 24px; background-color: rgba(0, 0, 0, .6); color: #fff; border: 2px solid yellow; opacity: 0; transition: .4s all ease-in-out;}
+.contribution_box{position: absolute; top: 0; left: 0; z-index: 1; display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: space-between; padding: 20px; background-color: rgba(0, 0, 0, .6); color: #fff; border: 2px solid yellow; opacity: 0; transition: .4s all ease-in-out;}
 .contribution_box.on{opacity: 1;}
 .contribution_box h2{margin: 0 0 12px; color: yellow !important;}
 .contribution_box h3{ }
@@ -96,9 +105,7 @@ article.name_section.bottom img{width: 98vw;}
 
     section.job_section{padding: 100px 20px; flex-direction: column; }
     section.job_section article:last-child{width: 100%;}
-    section.job_section li:first-child{padding: 0 24px 24px 0;}
-    section.job_section li:nth-child(2){padding: 0 0 24px 24px;}
-    section.job_section li:last-child{padding: 24px 0 0;}
+    section.job_section li{width: 100%;}
 
     section.portfolio_section{padding: 0 20px 100px;}
     .project_list li{width: calc(50% - 10px);}
@@ -133,10 +140,6 @@ article.name_section.bottom img{width: 98vw;}
 
     section.job_section{flex-direction: column; padding: 80px 20px;}
     section.job_section article:last-child{width: 100%;}
-    section.job_section li{gap: 24px;}
-    section.job_section li:first-child{padding: 0 20px 20px 0;}
-    section.job_section li:nth-child(2){padding: 0 0 20px 20px;}
-    section.job_section li:last-child{padding: 20px 0 0;}
 
     section.portfolio_section{padding: 0 20px 80px;}
     .project_list li{width: calc(50% - 10px); gap: 16px;}
@@ -160,14 +163,8 @@ article.name_section.bottom img{width: 98vw;}
     .animated_text{gap: 8px;}
     .animated_text p{flex-direction: column; align-items: center; gap: 8px;}
 
-    section.name_section{padding: 24px 0;}
-
     section.job_section{padding: 60px 16px;}
-    section.job_section li{width: 100% !important; padding: 20px 0 !important; gap: 16px;}
-    section.job_section li:first-child{border-bottom: 1px solid #fff; padding-top: 0 !important; border-right: none;}
-    section.job_section li:last-child{padding-bottom: 0 !important;}
-    section.job_section li .icon{width: 32px; height: 32px;}
-    section.job_section li .icon i{font-size: 14px;}
+    section.job_section li{padding: 20px 16px;}
 
     section.portfolio_section{padding: 0 16px 60px;}
     section.portfolio_section .flex_title > span.paragraph{gap: 0 8px;}
